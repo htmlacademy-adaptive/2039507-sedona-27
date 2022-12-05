@@ -17,6 +17,18 @@
             <li class="site-nav__item">
               <a class="site-nav__link" href="catalog.html">фото и видео</a>
             </li>
+            <li class="site-nav__item logo">
+              <div class="logo__wrapper">
+                <a class="logo__link" href="index.html"
+                  ><img
+                    class="logo__image"
+                    src="../source/img/logo.png"
+                    alt="logo"
+                    width="195"
+                    height="96"
+                /></a>
+              </div>
+            </li>
             <li class="site-nav__item">
               <a class="site-nav__link" href="form.html">форма отзыва</a>
             </li>
@@ -30,23 +42,9 @@
             </li>
           </ul>
           <button class="button site-nav__button">
-            <svg
-              width="23"
-              height="23"
-              viewBox="0 0 23 23"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M22.2 2.8L19.4 0L11.1 8.3L2.8 0L0 2.8L8.3 11.1L0 19.4L2.8 22.2L11.1 13.9L19.4 22.2L22.2 19.4L13.9 11.1L22.2 2.8Z"
-                fill="white"
-              />
-            </svg>
+            <span class="visually-hidden">открыть меню</span>
           </button>
         </nav>
-        <div class="main-header__logo">
-          <img src="../source/img/logo.png" alt="logo" />
-        </div>
       </div>
     </header>
 
@@ -79,64 +77,76 @@
         <h1 class="visually-hidden">form</h1>
         <form action="#" method="post">
           <fieldset class="form__name name-form">
-            <h2 class="name-form__title">представьтесь:</h2>
-            <label class="name-form__label" for="name">имя*:</label>
+            <legend class="name-form__title">представьтесь:</legend>
+            <label class="name-form__label" for="input-name">имя*:</label>
             <input
               class="name-form__input"
               type="text"
-              id="name"
+              id="input-name"
               value="Пётр"
             />
-            <label class="name-form__label" for="surname">фамилия*:</label>
+            <label class="name-form__label" for="input-surname"
+              >фамилия*:</label
+            >
             <input
               class="name-form__input"
               type="text"
-              id="surname"
+              id="input-surname"
               value="Пустота"
             />
-            <label class="name-form__label" for="middle-name">отчество*:</label>
+            <label class="name-form__label" for="input-middle-name"
+              >отчество*:</label
+            >
             <input
               class="name-form__input"
               type="text"
-              id="middle-name"
+              id="input-middle-name"
               value="Викторович"
             />
           </fieldset>
 
           <fieldset class="form__contact contact">
-            <h2 class="contact__title">контактная информация:</h2>
-            <label class="contact_label" for="telefon"
+            <legend class="contact__title">контактная информация:</legend>
+            <label class="contact__label" for="input-telefon"
               >Контактный телефон*:</label
             >
             <input
               class="contact__input"
               type="tel"
-              id="telefon"
+              id="input-telefon"
               placeholder="Введите телефон"
             />
-            <label class="contact_label" for="email">Электронная почта*:</label>
+            <label class="contact__label" for="input-email"
+              >Электронная почта*:</label
+            >
             <input
               class="contact__input"
               type="email"
-              id="email"
+              id="input-email"
               placeholder="Введите e-mail"
             />
           </fieldset>
 
           <fieldset class="form__rating rating">
-            <label class="rating__label">
+            <legend class="rating__title">ваше общее впечатление:</legend>
+            <label class="rating__label"
+              >скорее положительное
               <input type="checkbox" class="rating__checkbox" name="rating" />
             </label>
-            <label class="rating__label">
+            <label class="rating__label"
+              >скорее отрицательное
               <input type="checkbox" class="rating__checkbox" name="rating" />
             </label>
-            <label class="rating__label">
+            <label class="rating__label"
+              >затрудняюсь ответить
               <input type="checkbox" class="rating__checkbox" name="rating" />
             </label>
           </fieldset>
 
           <fieldset class="form__checkbox checkbox">
-            <h2 class="checkbox__title">посещенные достопримечательности:</h2>
+            <legend class="checkbox__title">
+              посещенные достопримечательности:
+            </legend>
             <label class="checkbox__label"
               >мост дьявола
               <input type="checkbox" class="checkbox__input" />
@@ -156,14 +166,14 @@
           </fieldset>
 
           <fieldset class="form__comment comment">
-            <h2 class="comment__title">oпишите свои эмоции:</h2>
+            <legend class="comment__title">oпишите свои эмоции:</legend>
             <textarea
               class="comment__field"
               cols="30"
               rows="10"
               placeholder="oпишите подробно все свои восторги"
             ></textarea>
-            <button class="comment_button button">отправить отзыв</button>
+            <button class="comment__button button">отправить отзыв</button>
             <div class="comment__footnote">* — обязательные поля</div>
           </fieldset>
         </form>

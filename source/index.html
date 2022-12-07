@@ -3,30 +3,28 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Седона: Главная</title>
   </head>
+
   <body class="page__body">
     <header class="main-header">
       <div class="main-header__wrapper">
+        <a class="main-header__logo" href="index.html">
+          <img src="../img/logo.png" alt="logo" width="195" height="96" />
+        </a>
+
+        <button class="main-header__toggle button">
+          <span class="visually-hidden">открыть меню</span>
+        </button>
+
         <nav class="main-header__nav site-nav">
           <ul class="site-nav__list">
             <li class="site-nav__item">
-              <a class="site-nav__link" href="index.html">главная</a>
+              <a class="site-nav__link" href="index.html"> главная </a>
             </li>
             <li class="site-nav__item">
               <a class="site-nav__link" href="catalog.html">фото и видео</a>
-            </li>
-            <li class="site-nav__item logo">
-              <div class="logo__wrapper">
-                <a class="logo__link" href="index.html"
-                  ><img
-                    class="logo__image"
-                    src="../source/img/logo.png"
-                    alt="logo"
-                    width="195"
-                    height="96"
-                /></a>
-              </div>
             </li>
             <li class="site-nav__item">
               <a class="site-nav__link" href="form.html">форма отзыва</a>
@@ -40,9 +38,6 @@
               </a>
             </li>
           </ul>
-          <button class="button site-nav__button">
-            <span class="visually-hidden">открыть меню</span>
-          </button>
         </nav>
       </div>
     </header>
@@ -51,14 +46,17 @@
       <div class="intro__wrapper">
         <h1 class="visually-hidden">welcome</h1>
         <img
-          class="intro-image"
-          src="../source/img/index-image/back-mobile.jpg"
-          alt="image"
+          class="intro__image"
+          src="../img/index-image/back-mobile.jpg"
+          alt="intro image"
+          width="320"
+          height="332"
+          position="50% 50%"
         />
         <div class="intro__inner">
-          <img src="../source/img/text-index.svg" alt="intro image" />
           <h2 class="intro__title">
-            седона — небольшой городок в аризоне, заслуживающий большего!
+            седона — небольшой<br />
+            городок в аризоне, заслуживающий большего!
           </h2>
           <p class="intro__paragraph">
             pассмотрим 5 причин, по которым cедона круче, чем гранд каньон!

@@ -1,0 +1,38 @@
+.rating {
+  display: flex;
+  flex-direction: column;
+}
+
+.rating__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rating__item {
+  margin-bottom: 16px;
+  padding: 10px 0;
+}
+
+.rating__label {
+  position: relative;
+  padding-left: 62px;
+  font-size: 18px;
+  font-weight: @bold;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.rating__checkbox {
+  appearance: none;
+
+  &::before {
+    position: absolute;
+    content: "";
+    background-image: url("/img/form-image/radio-icon.svg");
+    width: 46px;
+    height: 46px;
+    top: -15px;
+    left: 0;
+  }
+}

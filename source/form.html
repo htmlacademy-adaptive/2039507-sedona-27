@@ -4,30 +4,27 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Document</title>
   </head>
-  <body>
+  <body class="page__body">
     <header class="main-header">
       <div class="main-header__wrapper">
+        <a class="main-header__logo" href="index.html">
+          <img src="../img/logo.png" alt="logo" width="195" height="96" />
+        </a>
+
+        <button class="main-header__toggle button">
+          <span class="visually-hidden">открыть меню</span>
+        </button>
+
         <nav class="main-header__nav site-nav">
           <ul class="site-nav__list">
             <li class="site-nav__item">
-              <a class="site-nav__link" href="index.html">главная</a>
+              <a class="site-nav__link" href="index.html"> главная </a>
             </li>
             <li class="site-nav__item">
               <a class="site-nav__link" href="catalog.html">фото и видео</a>
-            </li>
-            <li class="site-nav__item logo">
-              <div class="logo__wrapper">
-                <a class="logo__link" href="index.html"
-                  ><img
-                    class="logo__image"
-                    src="../source/img/logo.png"
-                    alt="logo"
-                    width="195"
-                    height="96"
-                /></a>
-              </div>
             </li>
             <li class="site-nav__item">
               <a class="site-nav__link" href="form.html">форма отзыва</a>
@@ -41,34 +38,27 @@
               </a>
             </li>
           </ul>
-          <button class="button site-nav__button">
-            <span class="visually-hidden">открыть меню</span>
-          </button>
         </nav>
       </div>
     </header>
 
     <section class="intro">
-      <div class="intro__wrapper">
+      <div class="intro__wrapper intro__wrapper--catalog">
         <h1 class="visually-hidden">welcome</h1>
         <img
-          class="intro-image"
-          src="../source/img/index-image/back-mobile.jpg"
+          class="intro__image"
+          src="/img/index-image/back-mobile.jpg"
           alt="image"
+          width="320"
+          height="332"
         />
-        <div class="intro__inner">
-          <img
-            src="./img/SEDONA.svg"
-            alt="intro image"
-            width="320"
-            height="160"
-          />
-        </div>
+      </div>
+      <div class="intro__inner">
         <h2 class="intro__title">oставьте свой отзыв</h2>
-        <span class="intro__paragraph"
-          >помогите нашим отелям стать лучше! оставьте отзыв о них, а также о
-          посещенных вами достопримечательностях</span
-        >
+        <p class="intro__paragraph">
+          помогите нашим отелям стать лучше! оставьте отзыв о них, а также о
+          посещенных вами достопримечательностях
+        </p>
       </div>
     </section>
 
@@ -76,105 +66,147 @@
       <div class="form__wrapper">
         <h1 class="visually-hidden">form</h1>
         <form action="#" method="post">
-          <fieldset class="form__name name-form">
-            <legend class="name-form__title">представьтесь:</legend>
-            <label class="name-form__label" for="input-name">имя*:</label>
-            <input
-              class="name-form__input"
-              type="text"
-              id="input-name"
-              value="Пётр"
-            />
-            <label class="name-form__label" for="input-surname"
-              >фамилия*:</label
-            >
-            <input
-              class="name-form__input"
-              type="text"
-              id="input-surname"
-              value="Пустота"
-            />
-            <label class="name-form__label" for="input-middle-name"
-              >отчество*:</label
-            >
-            <input
-              class="name-form__input"
-              type="text"
-              id="input-middle-name"
-              value="Викторович"
-            />
+          <fieldset class="form__fieldset">
+            <legend class="form__fieldset-title">представьтесь:</legend>
+            <div class="form__fieldset-inner name-form">
+              <label class="name-form__label" for="input-name">имя*:</label>
+              <input
+                class="name-form__input"
+                type="text"
+                id="input-name"
+                value="Пётр"
+              />
+              <label class="name-form__label" for="input-surname"
+                >фамилия*:</label
+              >
+              <input
+                class="name-form__input"
+                type="text"
+                id="input-surname"
+                value="Пустота"
+              />
+              <label class="name-form__label" for="input-middle-name"
+                >отчество*:</label
+              >
+              <input
+                class="name-form__input"
+                type="text"
+                id="input-middle-name"
+                value="Викторович"
+              />
+            </div>
           </fieldset>
 
-          <fieldset class="form__contact contact">
-            <legend class="contact__title">контактная информация:</legend>
-            <label class="contact__label" for="input-telefon"
-              >Контактный телефон*:</label
-            >
-            <input
-              class="contact__input"
-              type="tel"
-              id="input-telefon"
-              placeholder="Введите телефон"
-            />
-            <label class="contact__label" for="input-email"
-              >Электронная почта*:</label
-            >
-            <input
-              class="contact__input"
-              type="email"
-              id="input-email"
-              placeholder="Введите e-mail"
-            />
+          <fieldset class="form__fieldset">
+            <legend class="form__fieldset-title">контактная информация:</legend>
+            <div class="form__fieldset-inner contact">
+              <label class="contact__label" for="input-telefon"
+                >Контактный телефон*:</label
+              >
+              <input
+                class="contact__input contact__input--phone"
+                type="tel"
+                id="input-telefon"
+                placeholder="Введите телефон"
+              />
+              <label class="contact__label" for="input-email"
+                >Электронная почта*:</label
+              >
+              <input
+                class="contact__input contact__input--email"
+                type="email"
+                id="input-email"
+                placeholder="Введите e-mail"
+              />
+            </div>
           </fieldset>
 
-          <fieldset class="form__rating rating">
-            <legend class="rating__title">ваше общее впечатление:</legend>
-            <label class="rating__label"
-              >скорее положительное
-              <input type="checkbox" class="rating__checkbox" name="rating" />
-            </label>
-            <label class="rating__label"
-              >скорее отрицательное
-              <input type="checkbox" class="rating__checkbox" name="rating" />
-            </label>
-            <label class="rating__label"
-              >затрудняюсь ответить
-              <input type="checkbox" class="rating__checkbox" name="rating" />
-            </label>
+          <fieldset class="form__fieldset">
+            <legend class="form__fieldset-title">
+              ваше общее впечатление:
+            </legend>
+            <div class="form__fieldset-inner rating">
+              <ul class="rating__list">
+                <li class="rating__item">
+                  <label class="rating__label"
+                    >Cкорее положительное
+                    <input
+                      class="rating__checkbox"
+                      type="checkbox"
+                      name="rating"
+                    />
+                  </label>
+                </li>
+                <li class="rating__item">
+                  <label class="rating__label"
+                    >Cкорее отрицательное
+                    <input
+                      class="rating__checkbox"
+                      type="checkbox"
+                      name="rating"
+                    />
+                  </label>
+                </li>
+                <li class="rating__item">
+                  <label class="rating__label"
+                    >Затрудняюсь ответить
+                    <input
+                      class="rating__checkbox"
+                      type="checkbox"
+                      name="rating"
+                    />
+                  </label>
+                </li>
+              </ul>
+            </div>
           </fieldset>
 
-          <fieldset class="form__checkbox checkbox">
-            <legend class="checkbox__title">
+          <fieldset class="form__fieldset">
+            <legend class="form__fieldset-title">
               посещенные достопримечательности:
             </legend>
-            <label class="checkbox__label"
-              >мост дьявола
-              <input type="checkbox" class="checkbox__input" />
-            </label>
-            <label class="checkbox__label"
-              >гора-колокол
-              <input type="checkbox" class="checkbox__input" />
-            </label>
-            <label class="checkbox__label"
-              >слайд-парк
-              <input type="checkbox" class="checkbox__input" />
-            </label>
-            <label class="checkbox__label"
-              >красные скалы
-              <input type="checkbox" class="checkbox__input" />
-            </label>
+            <div class="form__fieldset-inner checkbox">
+              <ul class="checkbox__list">
+                <li class="checkbox__item">
+                  <label class="checkbox__label"
+                    >Mост дьявола
+                    <input type="checkbox" class="checkbox__input" />
+                  </label>
+                </li>
+                <li class="checkbox__item">
+                  <label class="checkbox__label"
+                    >Гора-колокол
+                    <input type="checkbox" class="checkbox__input" />
+                  </label>
+                </li>
+                <li class="checkbox__item">
+                  <label class="checkbox__label"
+                    >Слайд-парк
+                    <input type="checkbox" class="checkbox__input" />
+                  </label>
+                </li>
+                <li class="checkbox__item">
+                  <label class="checkbox__label"
+                    >Красные скалы
+                    <input type="checkbox" class="checkbox__input" />
+                  </label>
+                </li>
+              </ul>
+            </div>
           </fieldset>
 
-          <fieldset class="form__comment comment">
-            <legend class="comment__title">oпишите свои эмоции:</legend>
-            <textarea
-              class="comment__field"
-              cols="30"
-              rows="10"
-              placeholder="oпишите подробно все свои восторги"
-            ></textarea>
-            <button class="comment__button button">отправить отзыв</button>
-            <div class="comment__footnote">* — обязательные поля</div>
+          <fieldset class="form__fieldset">
+            <legend class="form__fieldset-title">oпишите свои эмоции:</legend>
+            <div class="form__fieldset-inner comment">
+              <textarea
+                class="comment__field"
+                cols="30"
+                rows="5"
+                placeholder="Oпишите подробно все свои восторги"
+              ></textarea>
+              <button class="comment__button button">отправить отзыв</button>
+              <div class="comment__footnote">* — обязательные поля</div>
+            </div>
           </fieldset>
         </form>
       </div>

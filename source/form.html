@@ -304,26 +304,41 @@
       </div>
     </footer>
 
-    <!--modal
+    <!--modal-->
 
-    <section class="modal-error">
-      <h2 class="modal-error__title">что-то пошло не так!</h2>
-      <span class="modal-error__text"
-        >проверьте поля, выделенные красным, скорее всего вы забыли их
-        заполнить</span
-      >
-      <button class="button-error button">ок</button>
-    </section>
+    <div class="modal modal__container">
+      <section class="modal__error">
+        <h1 class="visually-hidden">что-то пошло не так!</h1>
+        <div class="modal__error-wrapper">
+          <div class="modal__error-content">
+            <h2 class="modal__error-title">что-то пошло не так!</h2>
+            <span class="modal__error-text"
+              >проверьте поля, выделенные красным, скорее всего вы забыли их
+              заполнить</span
+            >
+          </div>
+          <button class="modal__error-button">ок</button>
+        </div>
+      </section>
 
-    <section class="modal-sent">
-      <h2 class="modal-sent__title">ваш отзыв отправлен!</h2>
-      <span class="modal-sent__text"
-        >спасибо за ваше участие, ваш отзыв уже поступил к нам.В ближайшее время
-        мы опубликуем его на сайте.</span
-      >
-      <button class="button-sent button">закрыть окно</button>
-    </section>
+      <!--
 
-    -->
+      <section class="modal__sent">
+        <h1 class="visually-hidden">ваш отзыв отправлен!</h1>
+        <div class="modal__sent-wrapper">
+          <div class="modal__sent-content">
+            <h2 class="modal__sent-title">ваш отзыв отправлен!</h2>
+            <span class="modal__sent-text"
+              >спасибо за ваше участие, ваш отзыв уже поступил к нам.В ближайшее
+              время мы опубликуем его на сайте.</span
+            >
+          </div>
+          <div class="modal__sent-inner">
+            <button class="modal__sent-button">закрыть окно</button>
+          </div>
+        </div>
+      </section>
+      -->
+    </div>
   </body>
 </html>

@@ -1,0 +1,37 @@
+.checkbox {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.checkbox__item {
+  margin-bottom: 16px;
+  padding: 10px 0;
+}
+
+.checkbox__label {
+  position: relative;
+  padding-left: 62px;
+  font-size: 18px;
+  font-weight: @bold;
+  text-align: left;
+
+  &::before {
+    position: absolute;
+    content: "";
+    background-image: url("/img/form-image/checkbox-icon.svg");
+    width: 46px;
+    height: 46px;
+    top: -15px;
+    left: 0;
+  }
+}
+
+.checkbox__input {
+  appearance: none;
+}

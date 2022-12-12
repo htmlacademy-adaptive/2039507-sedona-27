@@ -1,0 +1,24 @@
+.button {
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: @blue;
+  color: @white;
+  font-size: 21px;
+  font-weight: @bold;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: @blue-hover;
+    fill: @blue-hover;
+  }
+
+  &:active {
+    color: @white-active;
+    background-color: @blue-active;
+  }
+
+  &:disabled {
+    background-color: @deep-grey;
+  }
+}

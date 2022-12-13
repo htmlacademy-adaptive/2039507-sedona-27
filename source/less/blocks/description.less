@@ -11,10 +11,15 @@
 
 .description__item {
   position: relative;
+  background-color: @grey;
 
   &--has-image {
     background-color: @blue;
     color: @white;
+  }
+
+  &--icon {
+    background-color: @white;
   }
 }
 
@@ -25,15 +30,17 @@
 
 .description__image {
   &--city {
-    background: url("../img/index-image/photo-city@1x.jpg") no-repeat 50% 50%;
+    background: url("../img/index-image/photo-city-mobile@1x.jpg") no-repeat 50%
+      50%;
     width: 320px;
-    height: auto;
+    height: 260px;
   }
 
   &--bridge {
-    background: url("../img/index-image/photo-bridge@1x.jpg") no-repeat 50% 50%;
+    background: url("../img/index-image/photo-bridge-mobile@1x.jpg") no-repeat
+      50% 50%;
     width: 320px;
-    height: auto;
+    height: 260px;
   }
 }
 

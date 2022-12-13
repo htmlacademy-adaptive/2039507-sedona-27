@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="css/style.css" />
     <title>Document</title>
   </head>
+
   <body class="page__body">
     <header class="main-header">
+      <a class="main-header__logo" href="index.html">
+        <img src="../img/logo.png" alt="logo" width="195" height="96" />
+      </a>
       <div class="main-header__wrapper">
-        <a class="main-header__logo" href="index.html">
-          <img src="../img/logo.png" alt="logo" width="195" height="96" />
-        </a>
-
         <button class="main-header__toggle button">
           <span class="visually-hidden">открыть меню</span>
         </button>
@@ -21,15 +21,19 @@
         <nav class="main-header__nav site-nav">
           <ul class="site-nav__list">
             <li class="site-nav__item">
-              <a class="site-nav__link button" href="index.html"> главная </a>
-            </li>
-            <li class="site-nav__item">
               <a
                 class="site-nav__link site-nav__link--active button"
-                href="catalog.html"
+                href="index.html"
+              >
+                главная
+              </a>
+            </li>
+            <li class="site-nav__item">
+              <a class="site-nav__link button" href="catalog.html"
                 >фото и видео</a
               >
             </li>
+            <li class="site-nav__item site-nav__item--empty"></li>
             <li class="site-nav__item">
               <a class="site-nav__link button" href="form.html">форма отзыва</a>
             </li>

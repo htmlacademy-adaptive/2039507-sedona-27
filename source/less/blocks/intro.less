@@ -7,7 +7,7 @@
   &::after {
     position: absolute;
     content: "";
-    background: url("/img/text-index.svg") no-repeat;
+    background: url("/img/text-index-mobile.svg") no-repeat;
     width: 280px;
     height: 215px;
     top: 65px;
@@ -23,17 +23,19 @@
       width: 320px;
       height: 60px;
       bottom: -3px;
-      left: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
     }
 
     &::after {
       position: absolute;
       content: "";
       background: url("/img/sedona.svg") no-repeat;
-      width: 280px;
+      width: 230px;
       height: 215px;
-      top: 50%;
-      left: 15%;
+      top: 35%;
+      left: 50%;
+      transform: translate(-50%, 0);
     }
   }
 }
@@ -41,12 +43,12 @@
 .intro__image {
   margin: 0 auto;
   background-color: @blue;
-  display: block;
-}
+  background: url("../img/index-image/bg-intro-mobile.jpg") no-repeat 50% 50%;
+  width: 320px;
+  height: 389px;
 
-@media (min-resolution: 2dppx) {
-  .intro__image {
-    background-image: url("../img/index-image/bg-intro-mobile@2x.jpg");
+  &--catalog {
+    height: 158px;
   }
 }
 
@@ -67,16 +69,18 @@
     transform: translate(-50%, 0);
   }
 
-  &::after {
-    position: absolute;
-    content: "";
-    background: url("/img/index-image/intro-bottom.svg") no-repeat;
-    width: 320px;
-    height: 60px;
-    bottom: -100px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    z-index: 1;
+  @media (max-width: 767px) {
+    &::after {
+      position: absolute;
+      content: "";
+      background: url("/img/index-image/intro-bottom.svg") no-repeat;
+      width: 320px;
+      height: 60px;
+      bottom: -100px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      z-index: 1;
+    }
   }
 }
 
@@ -101,10 +105,57 @@
 @media (min-width: @tablet-width) {
   .intro__wrapper {
     width: 768px;
+
+    &::after {
+      position: absolute;
+      content: "";
+      background: url("/img/text-index-tablet.svg") no-repeat;
+      width: 461px;
+      height: 350px;
+      top: 65px;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+
+    &--catalog {
+      &::after {
+        position: absolute;
+        content: "";
+        background: url("/img/catalog-image/sedona-catalog.svg") no-repeat;
+        width: 457px;
+        height: 77px;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+    }
+  }
+
+  .intro__image {
+    margin: 0 auto;
+    background-color: @blue;
+    background: url("../img/index-image/bg-intro-tablet.jpg") no-repeat 50% 50%;
+    width: 768px;
+    height: 518px;
+
+    &--catalog {
+      height: 290px;
+    }
   }
 
   .intro__inner {
     padding: 0 124px;
+
+    &::before {
+      position: absolute;
+      content: "";
+      background: url("/img/intro-triangle-tablet.svg") no-repeat;
+      width: 768px;
+      height: 60px;
+      top: -89px;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
   }
 
   .intro__title {
@@ -115,9 +166,56 @@
 @media (min-width: @desktop-width) {
   .intro__wrapper {
     width: 1200px;
+
+    &::after {
+      position: absolute;
+      content: "";
+      background: url("/img/text-index-tablet.svg") no-repeat;
+      width: 461px;
+      height: 350px;
+      top: 65px;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+
+    &--catalog {
+      &::after {
+        position: absolute;
+        content: "";
+        background: url("/img/catalog-image/sedona-catalog.svg") no-repeat;
+        width: 457px;
+        height: 77px;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+    }
+  }
+
+  .intro__image {
+    margin: 0 auto;
+    background-color: @blue;
+    background: url("../img/index-image/bg-intro-desktop.jpg") no-repeat 50% 50%;
+    width: 1200px;
+    height: 518px;
+
+    &--catalog {
+      height: 301px;
+    }
   }
 
   .intro__inner {
     padding: 0 358px;
+
+    &::before {
+      position: absolute;
+      content: "";
+      background: url("/img/intro-triangle-desktop.svg") no-repeat;
+      width: 1200px;
+      height: 60px;
+      top: -89px;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
   }
 }

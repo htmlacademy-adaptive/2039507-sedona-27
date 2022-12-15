@@ -5,14 +5,39 @@
 }
 
 .contact__label {
+  position: relative;
   padding-left: 17px;
   text-transform: uppercase;
   font-size: 14px;
   color: #333333;
+
+  &--phone {
+    &:before {
+      position: absolute;
+      content: "";
+      background: url("../img/form-image/phone-icon.svg") no-repeat 50% 50%;
+      width: 20px;
+      height: 20px;
+      top: 33px;
+      right: -85px;
+    }
+  }
+
+  &--email {
+    &:before {
+      position: absolute;
+      content: "";
+      background: url("../img/form-image/email-icon.svg") no-repeat 50% 50%;
+      width: 20px;
+      height: 20px;
+      top: 35px;
+      right: -99px;
+      z-index: 1;
+    }
+  }
 }
 
 .contact__input {
-  position: relative;
   padding: 16px 0 16px 16px;
   margin-bottom: 16px;
   box-sizing: border-box;
@@ -20,6 +45,14 @@
   border: none;
   font-size: 18px;
   font-weight: @bold;
-  background-image: linear-gradient(to right, @white-grey 80%, @deep-grey 80%),
-    url("/img/form-image/phone-icon.svg");
+  background-image: linear-gradient(to right, @white-grey 80%, @deep-grey 80%);
+
+  &:hover {
+    background: @grey-hover;
+  }
+
+  &:active {
+    background: @white;
+    outline: 4px solid @grey-active;
+  }
 }

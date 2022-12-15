@@ -83,6 +83,8 @@
                 type="text"
                 id="input-name"
                 value="Пётр"
+                placeholder="Имя"
+                required
               />
               <label class="name-form__label" for="input-surname"
                 >фамилия*:</label
@@ -92,6 +94,8 @@
                 type="text"
                 id="input-surname"
                 value="Пустота"
+                placeholder="Фамилия"
+                required
               />
               <label class="name-form__label" for="input-middle-name"
                 >отчество*:</label
@@ -101,6 +105,8 @@
                 type="text"
                 id="input-middle-name"
                 value="Викторович"
+                placeholder="Отчество"
+                required
               />
             </div>
           </fieldset>
@@ -108,7 +114,9 @@
           <fieldset class="form__fieldset">
             <legend class="form__fieldset-title">контактная информация:</legend>
             <div class="form__fieldset-inner contact">
-              <label class="contact__label" for="input-telefon"
+              <label
+                class="contact__label contact__label--phone"
+                for="input-telefon"
                 >Контактный телефон*:</label
               >
               <input
@@ -116,8 +124,11 @@
                 type="tel"
                 id="input-telefon"
                 placeholder="Введите телефон"
+                required
               />
-              <label class="contact__label" for="input-email"
+              <label
+                class="contact__label contact__label--email"
+                for="input-email"
                 >Электронная почта*:</label
               >
               <input
@@ -125,6 +136,7 @@
                 type="email"
                 id="input-email"
                 placeholder="Введите e-mail"
+                required
               />
             </div>
           </fieldset>
@@ -139,30 +151,36 @@
                   <label class="rating__label"
                     >Cкорее положительное
                     <input
-                      class="rating__checkbox"
-                      type="checkbox"
+                      class="rating__checkbox visually-hidden"
+                      type="radio"
                       name="rating"
+                      value="positive"
                     />
+                    <span class="rating__mark"></span>
                   </label>
                 </li>
                 <li class="rating__item">
                   <label class="rating__label"
                     >Cкорее отрицательное
                     <input
-                      class="rating__checkbox"
-                      type="checkbox"
+                      class="rating__checkbox visually-hidden"
+                      type="radio"
                       name="rating"
+                      value="negative"
                     />
+                    <span class="rating__mark"></span>
                   </label>
                 </li>
                 <li class="rating__item">
                   <label class="rating__label"
                     >Затрудняюсь ответить
                     <input
-                      class="rating__checkbox"
-                      type="checkbox"
+                      class="rating__checkbox visually-hidden"
+                      type="radio"
                       name="rating"
+                      value="loss"
                     />
+                    <span class="rating__mark"></span>
                   </label>
                 </li>
               </ul>
@@ -173,30 +191,46 @@
             <legend class="form__fieldset-title">
               посещенные достопримечательности:
             </legend>
-            <div class="form__fieldset-inner checkbox">
-              <ul class="checkbox__list">
-                <li class="checkbox__item">
-                  <label class="checkbox__label"
+            <div class="form__fieldset-inner attraction">
+              <ul class="attraction__list">
+                <li class="attraction__item">
+                  <label class="attraction__label"
                     >Mост дьявола
-                    <input type="checkbox" class="checkbox__input" />
+                    <input
+                      class="attraction__checkbox visually-hidden"
+                      type="checkbox"
+                    />
+                    <span class="attraction__mark"></span>
                   </label>
                 </li>
-                <li class="checkbox__item">
-                  <label class="checkbox__label"
+                <li class="attraction__item">
+                  <label class="attraction__label"
                     >Гора-колокол
-                    <input type="checkbox" class="checkbox__input" />
+                    <input
+                      class="attraction__checkbox visually-hidden"
+                      type="checkbox"
+                    />
+                    <span class="attraction__mark"></span>
                   </label>
                 </li>
-                <li class="checkbox__item">
-                  <label class="checkbox__label"
+                <li class="attraction__item">
+                  <label class="attraction__label"
                     >Слайд-парк
-                    <input type="checkbox" class="checkbox__input" />
+                    <input
+                      class="attraction__checkbox visually-hidden"
+                      type="checkbox"
+                    />
+                    <span class="attraction__mark"></span>
                   </label>
                 </li>
-                <li class="checkbox__item">
-                  <label class="checkbox__label"
+                <li class="attraction__item">
+                  <label class="attraction__label"
                     >Красные скалы
-                    <input type="checkbox" class="checkbox__input" />
+                    <input
+                      class="attraction__checkbox visually-hidden"
+                      type="checkbox"
+                    />
+                    <span class="attraction__mark"></span>
                   </label>
                 </li>
               </ul>

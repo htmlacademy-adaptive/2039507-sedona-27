@@ -1,8 +1,3 @@
-.attraction {
-  display: flex;
-  flex-direction: column;
-}
-
 .attraction__list {
   margin: 0;
   padding: 0;
@@ -51,4 +46,28 @@
 
   width: 22px;
   height: 16px;
+}
+
+@media (min-width: @tablet-width) {
+  .attraction {
+    width: 648px;
+  }
+
+  .attraction__list {
+    padding: 0 84px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .attraction {
+    width: 960px;
+  }
+
+  .attraction__list {
+    padding: 0 45px;
+    display: flex;
+    justify-content: space-between;
+  }
 }

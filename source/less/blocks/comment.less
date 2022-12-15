@@ -26,3 +26,29 @@
   text-align: right;
   color: @dark-grey;
 }
+
+@media (min-width: @tablet-width) {
+  .comment {
+    width: 648px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .comment__field {
+    width: 100%;
+  }
+
+  .comment__button {
+    width: 50%;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .comment {
+    width: 768px;
+    padding: 0 96px;
+  }
+}

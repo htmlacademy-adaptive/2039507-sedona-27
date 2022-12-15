@@ -1,4 +1,5 @@
 .contact {
+  width: 280px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -18,8 +19,9 @@
       background: url("../img/form-image/phone-icon.svg") no-repeat 50% 50%;
       width: 20px;
       height: 20px;
-      top: 33px;
+      top: 34px;
       right: -85px;
+      z-index: 1;
     }
   }
 
@@ -38,6 +40,8 @@
 }
 
 .contact__input {
+  position: relative;
+  display: block;
   padding: 16px 0 16px 16px;
   margin-bottom: 16px;
   box-sizing: border-box;
@@ -54,5 +58,36 @@
   &:active {
     background: @white;
     outline: 4px solid @grey-active;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .contact {
+    padding-left: 43px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .contact {
+    width: 402px;
+    padding-left: 63px;
+  }
+
+  .contact__label {
+    &--phone {
+      left: 120px;
+    }
+
+    &--email {
+      left: 120px;
+    }
+  }
+
+  .contact__input {
+    background-image: linear-gradient(
+      to right,
+      @white-grey 85%,
+      @deep-grey 85%
+    );
   }
 }

@@ -2,220 +2,146 @@
   width: 320px;
   height: auto;
   margin: 0 auto;
-  position: relative;
-
-  &::after {
-    position: absolute;
-    content: "";
-    background: url("/img/text-index-mobile.svg") no-repeat;
-    width: 280px;
-    height: 215px;
-    top: 65px;
-    left: 50%;
-    transform: translate(-50%, 0);
-  }
-
-  &--catalog {
-    &::before {
-      position: absolute;
-      content: "";
-      background: url("/img/index-image/intro-top.svg") no-repeat;
-      width: 320px;
-      height: 60px;
-      bottom: -3px;
-      left: 50%;
-      transform: translate(-50%, 0);
-    }
-
-    &::after {
-      position: absolute;
-      content: "";
-      background: url("/img/sedona.svg") no-repeat;
-      width: 230px;
-      height: 215px;
-      top: 35%;
-      left: 50%;
-      transform: translate(-50%, 0);
-    }
-  }
 }
 
 .intro__image {
-  margin: 0 auto;
-  background-color: @blue;
-  background: url("../img/index-image/bg-intro-mobile.jpg") no-repeat 50% 50%;
   width: 320px;
-  height: 389px;
-
-  &--catalog {
-    height: 158px;
-  }
-}
-
-.intro__inner {
+  height: 158px;
+  background: url("../img/index-image/bg-intro-mobile.jpg") no-repeat 50% 100%;
   position: relative;
-  margin-top: 32px;
-  padding: 0 20px;
-  text-align: center;
 
   &::before {
+    position: absolute;
+    content: "";
+    background: url("/img/sedona.svg") no-repeat;
+    width: 230px;
+    height: 40px;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &::after {
     position: absolute;
     content: "";
     background: url("/img/index-image/intro-top.svg") no-repeat;
     width: 320px;
     height: 60px;
-    top: -89px;
+    bottom: -3px;
     left: 50%;
     transform: translate(-50%, 0);
   }
 
-  @media (max-width: 767px) {
-    &::after {
+  &--index {
+    width: 320px;
+    height: 389px;
+
+    &::before {
       position: absolute;
       content: "";
-      background: url("/img/index-image/intro-bottom.svg") no-repeat;
-      width: 320px;
-      height: 60px;
-      bottom: -100px;
+      background: url("/img/text-index-mobile.svg") no-repeat;
+      width: 282px;
+      height: 214px;
+      top: 50%;
       left: 50%;
-      transform: translate(-50%, 0);
-      z-index: 1;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.intro__inner {
+  margin-top: 32px;
+  padding: 0 20px;
+  text-align: center;
+  text-transform: uppercase;
+
+  &--index {
+    padding-bottom: 16px;
+    position: relative;
+
+    @media (max-width: 767px) {
+      &::before {
+        position: absolute;
+        content: "";
+        background: url("/img/index-image/intro-bottom.svg") no-repeat;
+        width: 320px;
+        height: 60px;
+        bottom: -90px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+      }
     }
   }
 }
 
 .intro__title {
   margin: 0;
-  margin-top: 32px;
-  margin-bottom: 35px;
   padding: 0;
-  text-transform: uppercase;
+  padding-bottom: 24px;
   font-size: 18px;
 }
 
 .intro__paragraph {
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
-  margin-bottom: 41px;
-  text-transform: uppercase;
   font-size: 14px;
-  line-height: 21px;
 }
 
 @media (min-width: @tablet-width) {
   .intro__wrapper {
     width: 768px;
+  }
 
-    &::after {
-      position: absolute;
-      content: "";
-      background: url("/img/text-index-tablet.svg") no-repeat;
-      width: 461px;
-      height: 350px;
-      top: 65px;
-      left: 50%;
-      transform: translate(-50%, 0);
+  .intro__image {
+    width: 768px;
+    height: 290px;
+    background: url("../img/index-image/bg-intro-tablet.jpg") no-repeat 50% 100%;
+
+    &::before {
+      width: 460px;
+      height: 80px;
+      background: url("/img/sedona-desktop.svg") no-repeat 50% 50%;
     }
 
-    &--catalog {
-      &::after {
-        position: absolute;
-        content: "";
-        background: url("/img/catalog-image/sedona-catalog.svg") no-repeat;
-        width: 457px;
-        height: 77px;
-        top: 35%;
-        left: 50%;
-        transform: translate(-50%, 0);
+    &::after {
+      width: 768px;
+      background: url("../img/intro-triangle-tablet.svg") no-repeat 50% 50%;
+    }
+
+    &--index {
+      height: 518px;
+
+      &::before {
+        height: 350px;
+        background: url("/img/text-index-desktop.svg") no-repeat 50% 50%;
       }
     }
   }
 
-  .intro__image {
-    margin: 0 auto;
-    background-color: @blue;
-    background: url("../img/index-image/bg-intro-tablet.jpg") no-repeat 50% 50%;
-    width: 768px;
-    height: 518px;
-
-    &--catalog {
-      height: 290px;
-    }
-  }
-
   .intro__inner {
-    padding: 0 124px;
-
-    &::before {
-      position: absolute;
-      content: "";
-      background: url("/img/intro-triangle-tablet.svg") no-repeat;
-      width: 768px;
-      height: 60px;
-      top: -89px;
-      left: 50%;
-      transform: translate(-50%, 0);
-    }
-  }
-
-  .intro__title {
-    font-size: 20px;
+    padding-bottom: 56px;
   }
 }
 
 @media (min-width: @desktop-width) {
   .intro__wrapper {
     width: 1200px;
-
-    &::after {
-      position: absolute;
-      content: "";
-      background: url("/img/text-index-tablet.svg") no-repeat;
-      width: 461px;
-      height: 350px;
-      top: 65px;
-      left: 50%;
-      transform: translate(-50%, 0);
-    }
-
-    &--catalog {
-      &::after {
-        position: absolute;
-        content: "";
-        background: url("/img/catalog-image/sedona-catalog.svg") no-repeat;
-        width: 457px;
-        height: 77px;
-        top: 35%;
-        left: 50%;
-        transform: translate(-50%, 0);
-      }
-    }
   }
 
   .intro__image {
-    margin: 0 auto;
-    background-color: @blue;
-    background: url("../img/index-image/bg-intro-desktop.jpg") no-repeat 50% 50%;
     width: 1200px;
-    height: 518px;
+    height: 301px;
+    background: url("../img/index-image/bg-intro-desktop.jpg") no-repeat 50% 50%;
 
-    &--catalog {
-      height: 301px;
-    }
-  }
-
-  .intro__inner {
-    padding: 0 358px;
-
-    &::before {
-      position: absolute;
-      content: "";
-      background: url("/img/intro-triangle-desktop.svg") no-repeat;
+    &::after {
       width: 1200px;
-      height: 60px;
-      top: -89px;
-      left: 50%;
-      transform: translate(-50%, 0);
+      height: 57px;
+      background: url("../img/intro-triangle-desktop.svg") no-repeat 50% 50%;
+    }
+
+    &--index {
+      height: 518px;
     }
   }
 }

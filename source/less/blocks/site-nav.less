@@ -1,0 +1,37 @@
+.site-nav {
+  /* display: none; */
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.site-nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav__item {
+  background-color: @blue;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid lighten(@black, 60%);
+  }
+
+  &:not(:first-child) {
+    border-top: 1px solid darken(@white, 20%);
+  }
+
+  &:last-child {
+    background-image: linear-gradient(to top, @grey, @blue 15%);
+  }
+}
+
+.site-nav__link {
+  padding: 16px;
+  display: block;
+
+  &--active {
+    color: @brown-grey;
+  }
+}

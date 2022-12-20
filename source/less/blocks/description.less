@@ -21,6 +21,10 @@
   &--icon {
     background-color: @white;
   }
+
+  &--advantage:not(:last-child) {
+    border-bottom: 1px solid @light-grey;
+  }
 }
 
 .description__content {
@@ -110,6 +114,10 @@
 
   .description__item {
     display: flex;
+
+    &--advantage:not(:last-child) {
+      border: none;
+    }
   }
 
   .description__inner {

@@ -23,6 +23,16 @@
 
 .recommendation__button {
   padding: 16px 0;
+
+  &:hover,
+  &:active {
+    background-color: @blue-hover;
+    color: @white-active;
+  }
+
+  &:disabled {
+    background-color: @grey-hover;
+  }
 }
 
 @media (min-width: @tablet-width) {

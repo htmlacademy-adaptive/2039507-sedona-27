@@ -4,6 +4,7 @@
   position: relative;
 
   &::before {
+    display: none;
     position: absolute;
     content: "";
     background-image: url("/img/index-image/map-marker.svg");
@@ -15,26 +16,19 @@
 }
 
 .map__image {
-  background: url("../img/index-image/map-mobile.png") no-repeat 50% 50%;
-  height: 350px;
+  display: block;
 }
 
 @media (min-width: @tablet-width) {
-  .map__wrapper {
-    width: 768px;
-  }
-
+  .map__wrapper,
   .map__image {
-    background: url("../img/index-image/map-tablet.png") no-repeat 50% 50%;
+    width: 768px;
   }
 }
 
 @media (min-width: @desktop-width) {
-  .map__wrapper {
-    width: 1200px;
-  }
-
+  .map__wrapper,
   .map__image {
-    background: url("../img/index-image/map-desktop.png") no-repeat 50% 50%;
+    width: 1200px;
   }
 }

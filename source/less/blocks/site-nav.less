@@ -1,37 +1,220 @@
 .site-nav {
-  /* display: none; */
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+  position: relative;
+  /*display: none;*/
 }
 
 .site-nav__list {
   margin: 0;
   padding: 0;
   list-style: none;
+  display: flex;
+  flex-direction: column;
 }
 
-.site-nav__item {
-  background-color: @blue;
-
-  &:not(:last-child) {
-    border-bottom: 1px solid lighten(@black, 60%);
+@media (max-width: @mobile-width-only) {
+  .site-nav__wrapper {
+    &::before {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 320px;
+      height: 7px;
+      z-index: 13;
+      background-image: linear-gradient(
+        to bottom,
+        rgba(129, 179, 210, 1),
+        rgba(0, 0, 0, 0.1)
+      );
+    }
   }
 
-  &:not(:first-child) {
-    border-top: 1px solid darken(@white, 20%);
+  .site-nav__toggle {
+    position: absolute;
+    content: "";
+    top: 25px;
+    transform: translate(0, -50%);
+    right: 0;
   }
 
-  &:last-child {
-    background-image: linear-gradient(to top, @grey, @blue 15%);
+  .site-nav--closed {
+    .site-nav__item {
+      display: none;
+    }
+
+    .site-nav__toggle {
+      position: absolute;
+      content: "";
+      top: 25px;
+      transform: translate(0, -50%);
+      right: 10px;
+      width: 23px;
+      height: 4px;
+
+      &::before {
+        position: absolute;
+        content: "";
+        top: 10px;
+        right: 0;
+        width: 23px;
+        height: 4px;
+        background-color: @blue;
+      }
+
+      &::after {
+        position: absolute;
+        content: "";
+        bottom: 10px;
+        right: 0;
+        width: 23px;
+        height: 4px;
+        background-color: @blue;
+      }
+    }
+
+    &:hover::before,
+    &:hover::after {
+      opacity: 60%;
+    }
+
+    &:active::before,
+    &:active::after {
+      opacity: 30%;
+    }
+  }
+
+  .site-nav--opened {
+    .site-nav__wrapper {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+      z-index: 10;
+      min-height: 47vh;
+    }
+
+    .site-nav__toggle {
+      z-index: 11;
+
+      &::before {
+        position: absolute;
+        content: "";
+        right: 10px;
+        width: 32px;
+        height: 4px;
+        background-color: @white;
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        position: absolute;
+        content: "";
+        right: 10px;
+        width: 32px;
+        height: 4px;
+        background-color: @white;
+        transform: rotate(-45deg);
+      }
+    }
+
+    &:hover::before,
+    &:hover::after {
+      opacity: 60%;
+      offset: 0, 4px rgba(0, 0, 0, 0.25);
+    }
+
+    &:active::before,
+    &:active::after {
+      opacity: 30%;
+    }
+  }
+
+  .site-nav--nojs {
+    .site-nav__toggle {
+      display: none;
+    }
+
+    .site-nav__wrapper {
+      position: static;
+      min-height: 0;
+    }
+
+    .site-nav__item {
+      display: block;
+    }
+  }
+
+  .site-nav__item {
+    z-index: 2;
+  }
+
+  .site-nav__link {
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: @white;
+    font-size: 18px;
+    font-weight: @bold;
+    padding: 16px 0;
+    background-color: @blue;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(1, 1, 1, 0.2);
+    box-sizing: border-box;
+
+    &:hover {
+      background-color: @blue-hover;
+    }
+
+    &:active {
+      color: hsla(0, 0%, 100%, 0.3);
+      background-color: @blue-active;
+    }
+  }
+
+  .site-nav__item--empty {
+    display: none;
   }
 }
 
-.site-nav__link {
-  padding: 16px;
-  display: block;
+@media (min-width: @tablet-width) {
+  .site-nav__list {
+    min-height: 56px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-  &--active {
-    color: @brown-grey;
+  .site-nav__toggle {
+    display: none;
+  }
+
+  .site-nav__item {
+    min-width: 153px;
+  }
+
+  .site-nav__link {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: @black;
+    background-color: @white;
+    font-size: 14px;
+    font-weight: @bold;
+
+    &--active {
+      color: @brown-grey;
+    }
+
+    &:hover,
+    &:active {
+      background-color: @white;
+    }
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .site-nav__item {
+    min-width: 240px;
   }
 }

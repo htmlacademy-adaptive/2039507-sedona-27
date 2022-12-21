@@ -1,3 +1,8 @@
+.photo__wrapper {
+  width: 280px;
+  margin: 0 auto;
+}
+
 .photo__list {
   margin: 0;
   padding: 0;
@@ -10,27 +15,104 @@
   border-bottom: 1px solid @grey;
 }
 
-.photo__inner {
+.photo__content {
   width: 280px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: baseline;
+}
+
+.photo__inner {
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.photo__title {
+  display: contents;
 }
 
 .photo__name {
+  padding-bottom: 5px;
   text-transform: uppercase;
+  font-size: 14px;
   font-weight: @bold;
-  padding-top: 15px;
 }
 
 .photo__author {
-  padding: 10px 0;
+  color: @dark-grey;
 }
 
-.photo__likes-counter {
-  width: 65px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+@media (min-width: @tablet-width) {
+  .photo__wrapper {
+    width: 648px;
+  }
+
+  .photo__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .photo__item {
+    padding: 0;
+    border: none;
+  }
+
+  .photo__content {
+    width: 324px;
+
+    &--fullscreen {
+      width: 648px;
+    }
+  }
+
+  .photo__image {
+    width: 100%;
+
+    &--fullscreen {
+      height: 400px;
+      background-image: url("../img/catalog-image/photo-1-tablet.jpg");
+    }
+  }
+
+  .photo__inner {
+    padding: 15px 20px;
+    background-color: @grey;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .photo__title {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .photo__wrapper {
+    width: 1200px;
+  }
+
+  .photo__content {
+    position: relative;
+    width: 400px;
+
+    &--fullscreen {
+      width: 1200px;
+    }
+  }
+
+  .photo__inner {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+  }
+
+  .photo__name,
+  .photo__author {
+    color: @white;
+  }
 }

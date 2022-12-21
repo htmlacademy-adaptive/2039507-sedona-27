@@ -3,21 +3,60 @@
   margin: 0 auto;
 }
 
-.video__title {
-  padding: 0;
-  padding-top: 17px;
-  padding-bottom: 25px;
-  margin: 0;
+.video__inner {
+  padding: 20px 6px;
   text-transform: uppercase;
+  text-align: center;
+}
+
+.video__title {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 25px;
   font-size: 20px;
 }
 
 .video__paragraph {
   margin: 0;
   padding: 0;
-  text-transform: uppercase;
 }
 
-.video__player {
-  padding-top: 37px;
+.video__image {
+  background-image: url("/img/catalog-image/video-mobile.jpg");
+  width: 280px;
+  height: 177px;
+}
+
+@media (min-width: @tablet-width) {
+  .video__wrapper {
+    width: 648px;
+  }
+
+  .video__inner {
+    padding: 0 70px;
+    margin-top: 58px;
+    margin-bottom: 66px;
+  }
+
+  .video__image {
+    background-image: url("/img/catalog-image/video-tablet.jpg");
+    width: 648px;
+    height: 500px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .video__wrapper {
+    width: 800px;
+  }
+
+  .video__inner {
+    padding: 0 140px;
+  }
+
+  .video__image {
+    background-image: url("/img/catalog-image/video-desktop.jpg");
+    width: 800px;
+    height: 500px;
+  }
 }

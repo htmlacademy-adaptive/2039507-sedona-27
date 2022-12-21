@@ -1,0 +1,72 @@
+.attraction__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.attraction__item {
+  margin-bottom: 16px;
+  padding: 10px 0;
+}
+
+.attraction__label {
+  padding: 11px 0;
+  padding-left: 62px;
+  position: relative;
+  display: block;
+  font-size: 18px;
+  font-weight: @bold;
+
+  &:hover .attraction__mark,
+  &:focus .attraction__mark {
+    background-color: @grey-hover;
+  }
+
+  &:active .attraction__mark {
+    background-color: @grey-active;
+  }
+}
+
+.attraction__mark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45px;
+  height: 45px;
+  background-color: @white-grey;
+}
+
+.attraction__checkbox[type="checkbox"]:checked .attraction__mark:before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: url("../img/form-image/check-icon.svg") no-repeat 50% 50%;
+  width: 22px;
+  height: 16px;
+}
+
+@media (min-width: @tablet-width) {
+  .attraction {
+    width: 648px;
+  }
+
+  .attraction__list {
+    padding: 0 84px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .attraction {
+    width: 960px;
+  }
+
+  .attraction__list {
+    padding: 0 45px;
+    display: flex;
+    justify-content: space-between;
+  }
+}

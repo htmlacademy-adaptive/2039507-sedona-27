@@ -4,6 +4,7 @@
   position: relative;
 
   &::before {
+    display: none;
     position: absolute;
     content: "";
     background-image: url("/img/index-image/map-marker.svg");
@@ -11,5 +12,23 @@
     height: 27px;
     top: 45%;
     left: 45%;
+  }
+}
+
+.map__image {
+  display: block;
+}
+
+@media (min-width: @tablet-width) {
+  .map__wrapper,
+  .map__image {
+    width: 768px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .map__wrapper,
+  .map__image {
+    width: 1200px;
   }
 }

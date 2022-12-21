@@ -18,8 +18,39 @@
 
 .recommendation__quote {
   padding-bottom: 25px;
+  text-transform: uppercase;
 }
 
 .recommendation__button {
   padding: 16px 0;
+
+  &:hover,
+  &:active {
+    background-color: @blue-hover;
+    color: @white-active;
+  }
+
+  &:disabled {
+    background-color: @grey-hover;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .recommendation__wrapper {
+    width: 768px;
+  }
+
+  .recommendation__inner {
+    width: 465px;
+  }
+
+  .recommendation__title {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .recommendation__wrapper {
+    width: 1200px;
+  }
 }

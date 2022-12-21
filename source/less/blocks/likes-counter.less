@@ -1,0 +1,27 @@
+.likes-counter {
+  padding-top: 11px;
+  display: flex;
+  align-items: center;
+}
+
+.likes-counter__button {
+  padding-right: 14px;
+  border: none;
+  background-color: inherit;
+}
+
+.likes-counter__icon {
+  fill: @black;
+  opacity: 0.3;
+}
+
+@media (min-width: @desktop-width) {
+  .likes-counter__icon {
+    fill: @white;
+    opacity: 1;
+  }
+
+  .likes-counter__quantity {
+    color: @white;
+  }
+}

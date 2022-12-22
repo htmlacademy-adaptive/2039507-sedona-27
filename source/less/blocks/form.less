@@ -4,10 +4,23 @@
 }
 
 .form__fieldset {
+  position: relative;
   margin: 0;
   padding: 20px 20px 37px 20px;
   border: none;
-  border-bottom: 1px solid @grey-hover;
+
+  &:not(:last-child) {
+    &::before {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 320px;
+      height: 1px;
+      background-color: @light-grey;
+    }
+  }
 }
 
 .form__fieldset-title {
@@ -29,6 +42,38 @@
 
   .form__fieldset {
     padding: 0;
+
+    &:not(:last-child) {
+      &::before {
+        bottom: -35px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 100%;
+        height: 1px;
+      }
+    }
+  }
+
+  .form__fieldset-title {
+    padding-bottom: 28px;
+
+    &--rating,
+    &--comment {
+      width: 402px;
+      background-color: @white;
+    }
+  }
+
+  .form__fieldset-title-wrapper {
+    margin: 0 auto;
+    width: 402px;
+    background-color: @white;
+
+    .form__fieldset-title--attraction {
+      margin: 0 auto;
+      width: 320px;
+      vertical-align: middle;
+    }
   }
 }
 

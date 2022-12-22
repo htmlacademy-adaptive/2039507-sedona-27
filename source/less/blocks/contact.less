@@ -6,7 +6,6 @@
 }
 
 .contact__label {
-  position: relative;
   padding-left: 17px;
   text-transform: uppercase;
   font-size: 14px;
@@ -24,40 +23,42 @@
       z-index: 1;
     }
   }
-
-  &--email {
-    &:before {
-      position: absolute;
-      content: "";
-      background: url("../img/form-image/email-icon.svg") no-repeat 50% 50%;
-      width: 20px;
-      height: 20px;
-      top: 35px;
-      right: -99px;
-      z-index: 1;
-    }
-  }
 }
 
 .contact__input {
-  position: relative;
-  display: block;
   padding: 16px 0 16px 16px;
   margin-bottom: 16px;
+  display: block;
   box-sizing: border-box;
   width: 100%;
   border: none;
   font-size: 18px;
   font-weight: @bold;
-  background-image: linear-gradient(to right, @white-grey 80%, @deep-grey 80%);
+  background-color: @white-grey;
+
+  &--email {
+    background-image: url("../img/form-image/email-icon.svg");
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
+  }
+
+  &--phone {
+    position: static;
+    background-image: url("../img/form-image/phone-icon.svg");
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
+  }
 
   &:hover {
     background: @grey-hover;
   }
 
+  &:focus,
   &:active {
-    background: @white;
-    outline: 4px solid @grey-active;
+    background-image: none;
+    background-color: @white;
+    box-shadow: inset 0 0 0 4px @grey-hover;
+    outline: none;
   }
 }
 
@@ -81,13 +82,5 @@
     &--email {
       left: 120px;
     }
-  }
-
-  .contact__input {
-    background-image: linear-gradient(
-      to right,
-      @white-grey 85%,
-      @deep-grey 85%
-    );
   }
 }

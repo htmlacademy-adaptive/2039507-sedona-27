@@ -1,5 +1,5 @@
 .modal__container {
-  /* display: flex; */
+  /*display: flex;*/
   display: none;
   width: 100%;
   height: 100%;
@@ -16,7 +16,7 @@
   margin: 0 auto;
   background-color: @white;
   position: relative;
-  top: 40%;
+  top: 25%;
   box-sizing: border-box;
 }
 
@@ -46,6 +46,8 @@
   margin: 0;
   padding: 0;
   color: @dark-grey;
+  font-size: 14px;
+  line-height: 21px;
 }
 
 .modal__error-button {
@@ -74,4 +76,46 @@
   text-transform: uppercase;
   font-size: 18px;
   font-weight: @bold;
+}
+
+@media (min-width: @tablet-width) {
+  .modal__error {
+    width: 400px;
+  }
+
+  .modal__sent {
+    width: 640px;
+  }
+
+  .modal__error-title,
+  .modal__sent-title {
+    padding-bottom: 37px;
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .modal__error-title {
+    margin: 0 auto;
+    width: 250px;
+  }
+
+  .modal__error-content {
+    padding: 50px 47px;
+    padding-bottom: 30px;
+  }
+
+  .modal__sent-content {
+    margin: 0 auto;
+    padding-top: 58px;
+    width: 469px;
+  }
+
+  .modal__sent-inner {
+    padding: 44px 91px;
+  }
+
+  .modal__error-button,
+  .modal__sent-button {
+    font-size: 21px;
+  }
 }

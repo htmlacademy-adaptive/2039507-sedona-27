@@ -12,13 +12,20 @@
   background-color: @white-grey;
   font-family: "PT Sans", sans-serif;
   font-size: 18px;
+  font-weight: @bold;
   box-sizing: border-box;
+
+  &::-webkit-input-placeholder {
+    color: rgba(0, 0, 0, 0.3);
+  }
+
+  &::-moz-placeholder {
+    color: rgba(0, 0, 0, 0.3);
+  }
 }
 
 .comment__button {
   padding: 16px 0;
-  font-size: 21px;
-  font-weight: @bold;
 }
 
 .comment__footnote {

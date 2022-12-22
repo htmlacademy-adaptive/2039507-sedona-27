@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Document</title>
+    <title>Седона: Форма</title>
   </head>
 
   <body class="page__body">
@@ -106,9 +106,7 @@
           <fieldset class="form__fieldset">
             <legend class="form__fieldset-title">контактная информация:</legend>
             <div class="form__fieldset-inner contact">
-              <label
-                class="contact__label contact__label--phone"
-                for="input-telefon"
+              <label class="contact__label" for="input-telefon"
                 >Контактный телефон*:</label
               >
               <input
@@ -118,9 +116,7 @@
                 placeholder="Введите телефон"
                 required
               />
-              <label
-                class="contact__label contact__label--email"
-                for="input-email"
+              <label class="contact__label" for="input-email"
                 >Электронная почта*:</label
               >
               <input
@@ -134,7 +130,7 @@
           </fieldset>
 
           <fieldset class="form__fieldset">
-            <legend class="form__fieldset-title">
+            <legend class="form__fieldset-title form__fieldset-title--rating">
               ваше общее впечатление:
             </legend>
             <div class="form__fieldset-inner rating">
@@ -180,49 +176,52 @@
           </fieldset>
 
           <fieldset class="form__fieldset">
-            <legend class="form__fieldset-title">
+            <legend
+              class="form__fieldset-title form__fieldset-title--attraction"
+            >
               посещенные достопримечательности:
             </legend>
+
             <div class="form__fieldset-inner attraction">
               <ul class="attraction__list">
                 <li class="attraction__item">
-                  <label class="attraction__label"
-                    >Mост дьявола
+                  <label class="attraction__control">
                     <input
                       class="attraction__checkbox visually-hidden"
                       type="checkbox"
                     />
                     <span class="attraction__mark"></span>
+                    <span class="attraction__label">Mост дьявола</span>
                   </label>
                 </li>
                 <li class="attraction__item">
-                  <label class="attraction__label"
-                    >Гора-колокол
+                  <label class="attraction__control">
                     <input
                       class="attraction__checkbox visually-hidden"
                       type="checkbox"
                     />
                     <span class="attraction__mark"></span>
+                    <span class="attraction__label">Гора-колокол</span>
                   </label>
                 </li>
                 <li class="attraction__item">
-                  <label class="attraction__label"
-                    >Слайд-парк
+                  <label class="attraction__control">
                     <input
                       class="attraction__checkbox visually-hidden"
                       type="checkbox"
                     />
                     <span class="attraction__mark"></span>
+                    <span class="attraction__label">Слайд-парк</span>
                   </label>
                 </li>
                 <li class="attraction__item">
-                  <label class="attraction__label"
-                    >Красные скалы
+                  <label class="attraction__control">
                     <input
                       class="attraction__checkbox visually-hidden"
                       type="checkbox"
                     />
                     <span class="attraction__mark"></span>
+                    <span class="attraction__label">Красные скалы</span>
                   </label>
                 </li>
               </ul>
@@ -230,7 +229,9 @@
           </fieldset>
 
           <fieldset class="form__fieldset">
-            <legend class="form__fieldset-title">oпишите свои эмоции:</legend>
+            <legend class="form__fieldset-title form__fieldset-title--comment">
+              oпишите свои эмоции:
+            </legend>
             <div class="form__fieldset-inner comment">
               <textarea
                 class="comment__field"
@@ -330,6 +331,7 @@
         </div>
       </div>
     </footer>
+    <script src="script.js"></script>
 
     <!--modal-->
 
@@ -344,28 +346,28 @@
               заполнить</span
             >
           </div>
-          <button class="modal__error-button">ок</button>
+          <button class="modal__error-button button">ок</button>
         </div>
       </section>
+    </div>
 
-      <!--
-
+    <!--
+    <div class="modal modal__container">
       <section class="modal__sent">
         <h1 class="visually-hidden">ваш отзыв отправлен!</h1>
         <div class="modal__sent-wrapper">
           <div class="modal__sent-content">
             <h2 class="modal__sent-title">ваш отзыв отправлен!</h2>
             <span class="modal__sent-text"
-              >спасибо за ваше участие, ваш отзыв уже поступил к нам.В ближайшее
-              время мы опубликуем его на сайте.</span
+              >спасибо за ваше участие, ваш отзыв уже поступил к нам. В
+              ближайшее время мы опубликуем его на сайте.</span
             >
           </div>
           <div class="modal__sent-inner">
-            <button class="modal__sent-button">закрыть окно</button>
+            <button class="modal__sent-button button">закрыть окно</button>
           </div>
         </div>
       </section>
-      -->
     </div>
-  </body>
+  --></body>
 </html>

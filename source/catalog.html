@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="favicon.ico" />
+    <link rel="icon" href="/img/favicons/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/img/favicons/favicon.png" />
     <title>Седона: Каталог</title>
   </head>
 
@@ -68,13 +71,31 @@
         <ul class="photo__list">
           <li class="photo__item">
             <div class="photo__content photo__content--fullscreen">
-              <img
-                class="photo__image photo__image--fullscreen"
-                src="/img/catalog-image/photo-1-mobile.jpg"
-                alt="photo"
-                width="280"
-                height="280"
-              />
+              <picture>
+                <source
+                  media="(min-width: 1280px)"
+                  srcset="/img/catalog-image/photo-1-desktop.jpg"
+                  width="1200"
+                  height="400"
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset="
+                    /img/catalog-image/photo-1-tablet.jpg,
+                    /img/catalog-image/photo-1-tablet@2x.jpg 2x
+                  "
+                  width="648"
+                  height="400"
+                />
+                <img
+                  class="photo__image photo__image--fullscreen"
+                  src="/img/catalog-image/photo-1-mobile.jpg"
+                  alt="фото дороги уходящей в закат"
+                  width="280"
+                  height="280"
+                  srcset="/img/catalog-image/photo-1-mobile@2x.jpg 2x"
+                />
+              </picture>
               <div class="photo__inner">
                 <div class="photo__title">
                   <span class="photo__name">неродные просторы</span>
@@ -103,13 +124,32 @@
 
           <li class="photo__item">
             <div class="photo__content">
-              <img
-                src="./img/catalog-image/photo-2-mobile.jpg"
-                alt="photo"
-                class="photo__image"
-                width="280"
-                height="280"
-              />
+              <picture>
+                <source
+                  media="(min-width: 1280px)"
+                  srcset="/img/catalog-image/photo-2-desktop.jpg"
+                  width="400"
+                  height="267"
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset="
+                    /img/catalog-image/photo-2-tablet.jpg,
+                    /img/catalog-image/photo-2-tablet@2x.jpg 2x
+                  "
+                  width="324"
+                  height="267"
+                />
+                <img
+                  src="/img/catalog-image/photo-2-mobile.jpg"
+                  alt="photo"
+                  class="photo__image"
+                  width="280"
+                  height="280"
+                  srcset="/img/catalog-image/photo-2-mobile@2x.jpg 2x"
+                />
+              </picture>
+
               <div class="photo__inner">
                 <div class="photo__title">
                   <span class="photo__name">местная растительность</span>
@@ -138,13 +178,33 @@
 
           <li class="photo__item">
             <div class="photo__content">
-              <img
-                src="./img/catalog-image/photo-3-mobile.jpg"
-                alt="photo"
-                class="photo__image"
-                width="280"
-                height="280"
-              />
+              <picture>
+                <source
+                  media="(min-width: 1280px)"
+                  srcset="/img/catalog-image/photo-3-desktop.jpg"
+                  width="400"
+                  height="267"
+                />
+
+                <source
+                  media="(min-width: 768px)"
+                  srcset="
+                    /img/catalog-image/photo-3-tablet.jpg,
+                    /img/catalog-image/photo-3-tablet@2x.jpg 2x
+                  "
+                  width="324"
+                  height="267"
+                />
+                <img
+                  src="/img/catalog-image/photo-3-mobile.jpg"
+                  alt="photo"
+                  class="photo__image"
+                  width="280"
+                  height="280"
+                  srcset="/img/catalog-image/photo-3-mobile@2x.jpg 2x"
+                />
+              </picture>
+
               <div class="photo__inner">
                 <div class="photo__title">
                   <span class="photo__name">дорога на север</span>
@@ -173,13 +233,32 @@
 
           <li class="photo__item">
             <div class="photo__content">
-              <img
-                src="./img/catalog-image/photo-4-mobile.jpg"
-                alt="photo"
-                class="photo__image"
-                width="280"
-                height="280"
-              />
+              <picture>
+                <source
+                  media="(min-width: 1280px)"
+                  srcset="/img/catalog-image/photo-4-desktop.jpg"
+                  width="400"
+                  height="267"
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset="
+                    /img/catalog-image/photo-4-tablet.jpg,
+                    /img/catalog-image/photo-4-tablet@2x.jpg 2x
+                  "
+                  width="324"
+                  height="267"
+                />
+                <img
+                  src="/img/catalog-image/photo-4-mobile.jpg"
+                  alt="photo"
+                  class="photo__image"
+                  width="280"
+                  height="280"
+                  srcset="/img/catalog-image/photo-4-mobile@2x.jpg 2x"
+                />
+              </picture>
+
               <div class="photo__inner">
                 <div class="photo__title">
                   <span class="photo__name">мост дьявола</span>

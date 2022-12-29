@@ -33,18 +33,31 @@
 }
 
 .description__image {
+  width: 320px;
+  height: 260px;
+
   &--city {
-    background: url("../img/index-image/photo-city-mobile@1x.jpg") no-repeat 50%
-      50%;
-    width: 320px;
-    height: 260px;
+    background-image: url("../img/index-image/photo-city-mobile@1x.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
   }
 
   &--bridge {
-    background: url("../img/index-image/photo-bridge-mobile@1x.jpg") no-repeat
-      50% 50%;
-    width: 320px;
-    height: 260px;
+    background-image: url("../img/index-image/photo-bridge-mobile@1x.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+  }
+
+  @media (min-resolution: 2dppx) {
+    &--city {
+      background-image: url("../img/index-image/photo-city-mobile@2x.jpg");
+      height: 256px;
+    }
+
+    &--bridge {
+      background-image: url("../img/index-image/photo-bridge-mobile@2x.jpg");
+      height: 256px;
+    }
   }
 }
 
@@ -146,13 +159,26 @@
     height: 256px;
 
     &--city {
-      background: url("../img/index-image/photo-city@1x.jpg") no-repeat 50% 50%;
+      background-image: url("../img/index-image/photo-city-tablet@1x.jpg");
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
     }
 
     &--bridge {
-      background: url("../img/index-image/photo-bridge@1x.jpg") no-repeat 50%
-        50%;
+      background-image: url("../img/index-image/photo-bridge-tablet@1x.jpg");
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
       order: -1;
+    }
+
+    @media (min-resolution: 2dppx) {
+      &--city {
+        background-image: url("../img/index-image/photo-city-tablet@2x.jpg");
+      }
+
+      &--bridge {
+        background-image: url("../img/index-image/photo-bridge-tablet@2x.jpg");
+      }
     }
   }
 }
@@ -172,13 +198,16 @@
     height: auto;
 
     &--city {
-      background: url("../img/index-image/photo-city@1x.jpg") no-repeat 50% 50%;
+      background-image: url("../img/index-image/photo-city-tablet@2x.jpg");
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
       background-size: cover;
     }
 
     &--bridge {
-      background: url("../img/index-image/photo-bridge@1x.jpg") no-repeat 50%
-        50%;
+      background-image: url("../img/index-image/photo-bridge-tablet@2x.jpg");
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
       background-size: cover;
     }
   }

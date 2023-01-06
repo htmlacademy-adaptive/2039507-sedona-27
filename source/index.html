@@ -16,7 +16,7 @@
         <img src="../img/logo.png" alt="logo" width="195" height="96" />
       </a>
       <div class="main-header__wrapper">
-        <nav class="main-header__nav site-nav--opened">
+        <nav class="main-header__nav site-nav--closed">
           <button class="site-nav__toggle">
             <span class="visually-hidden">открыть меню</span>
           </button>
@@ -54,7 +54,64 @@
     <section class="intro">
       <div class="intro__wrapper">
         <h1 class="visually-hidden">welcome</h1>
-        <div class="intro__image intro__image--index"></div>
+        <div class="intro__image intro__image--index">
+          <picture>
+            <source
+              media="(min-width: 1280px)"
+              type="image/webp"
+              srcset="/img/intro-image/bg-intro-desktop.webp"
+              width="1200"
+              height="518"
+            />
+            <source
+              media="(min-width: 1280px)"
+              srcset="/img/intro-image/bg-intro-desktop.jpg"
+              width="1200"
+              height="518"
+            />
+            <source
+              type="image/webp"
+              media="(min-width: 768px)"
+              srcset="
+                /img/intro-image/bg-intro-tablet.webp,
+                /img/intro-image/bg-intro-tablet@2x.webp
+              "
+              width="768"
+              height="518"
+            />
+            <source
+              media="(min-width: 768px)"
+              srcset="
+                /img/intro-image/bg-intro-tablet.jpg,
+                /img/intro-image/bg-intro-tablet@2x.jpg
+              "
+              width="768"
+              height="518"
+            />
+            <source
+              media
+              (min-resolution:
+              2dppx)
+              type="image/webp"
+              srcset="/img/intro-image/bg-intro-mobile@2x.webp"
+              width="320"
+              height="389"
+            />
+            <source
+              type="image/webp"
+              srcset="/img/intro-image/bg-intro-mobile@2x.webp"
+              width="320"
+              height="389"
+            />
+
+            <img
+              srcset="/img/intro-image/bg-intro-mobile.jpg"
+              width="320"
+              height="389"
+              alt="#"
+            />
+          </picture>
+        </div>
         <div class="intro__inner intro__inner--index">
           <h2 class="intro__title">
             седона — небольшой<br />

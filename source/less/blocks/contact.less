@@ -1,5 +1,4 @@
 .contact {
-  position: relative;
   width: 280px;
   display: flex;
   flex-direction: column;
@@ -11,6 +10,19 @@
   text-transform: uppercase;
   font-size: 14px;
   color: #333333;
+
+  &--phone {
+    &::before {
+      position: absolute;
+      content: "";
+      background: url("../img/form-image/phone-icon.svg") no-repeat 50% 50%;
+      width: 20px;
+      height: 20px;
+      top: 34px;
+      right: -85px;
+      z-index: 1;
+    }
+  }
 }
 
 .contact__input {
@@ -22,7 +34,20 @@
   border: none;
   font-size: 18px;
   font-weight: @bold;
-  background-image: linear-gradient(to right, @grey 80%, @light-grey 80%);
+  background-color: @white-grey;
+
+  &--email {
+    background-image: url("../img/form-image/email-icon.svg");
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
+  }
+
+  &--phone {
+    position: static;
+    background-image: url("../img/form-image/phone-icon.svg");
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
+  }
 
   &:hover {
     background: @grey-hover;
@@ -37,22 +62,6 @@
   }
 }
 
-.contact__icon {
-  position: absolute;
-  width: 24px;
-  height: 20px;
-
-  &--phone {
-    top: 36px;
-    right: 18px;
-  }
-
-  &--email {
-    bottom: 36px;
-    right: 18px;
-  }
-}
-
 @media (min-width: @tablet-width) {
   .contact {
     padding-left: 43px;
@@ -63,10 +72,6 @@
   .contact {
     width: 402px;
     padding-left: 63px;
-  }
-
-  .contact__input {
-    background-image: linear-gradient(to right, @grey 85%, @light-grey 85%);
   }
 
   .contact__label {

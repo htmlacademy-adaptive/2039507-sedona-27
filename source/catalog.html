@@ -17,7 +17,7 @@
         <img src="../img/logo.png" alt="logo" width="195" height="96" />
       </a>
       <div class="main-header__wrapper">
-        <nav class="main-header__nav site-nav site-nav--closed">
+        <nav class="main-header__nav site-nav site-nav--nojs">
           <button class="site-nav__toggle button">
             <span class="visually-hidden">открыть меню</span>
           </button>
@@ -54,64 +54,7 @@
     <section class="intro">
       <div class="intro__wrapper">
         <h1 class="visually-hidden">фото и видео</h1>
-        <div class="intro__image">
-          <picture>
-            <source
-              media="(min-width: 1280px)"
-              type="image/webp"
-              srcset="/img/intro-image/bg-intro-desktop.webp"
-              width="1280"
-              height="290"
-            />
-            <source
-              media="(min-width: 1280px)"
-              srcset="/img/intro-image/bg-intro-desktop.jpg"
-              width="1280"
-              height="290"
-            />
-            <source
-              type="image/webp"
-              media="(min-width: 768px)"
-              srcset="
-                /img/intro-image/bg-intro-tablet.webp,
-                /img/intro-image/bg-intro-tablet@2x.webp
-              "
-              width="768"
-              height="290"
-            />
-            <source
-              media="(min-width: 768px)"
-              srcset="
-                /img/intro-image/bg-intro-tablet.jpg,
-                /img/intro-image/bg-intro-tablet@2x.jpg
-              "
-              width="768"
-              height="290"
-            />
-            <source
-              media
-              (min-resolution:
-              2dppx)
-              type="image/webp"
-              srcset="/img/intro-image/bg-intro-mobile@2x.webp"
-              width="320"
-              height="158"
-            />
-            <source
-              type="image/webp"
-              srcset="/img/intro-image/bg-intro-mobile@2x.webp"
-              width="320"
-              height="158"
-            />
-
-            <img
-              srcset="/img/intro-image/bg-intro-mobile.jpg"
-              width="320"
-              height="158"
-              alt="#"
-            />
-          </picture>
-        </div>
+        <div class="intro__image"></div>
       </div>
       <div class="intro__inner">
         <h2 class="intro__title">фото и видео</h2>
@@ -130,23 +73,44 @@
             <div class="photo__content photo__content--fullscreen">
               <picture>
                 <source
+                  media="(min-width: 1280px)"
                   type="image/webp"
-                  srcset="/img/catalog-image/photo-1-mobile@2x.webp"
+                  srcset="/img/catalog-image/photo-1-desktop.webp"
+                  width="400"
+                  height="267"
                 />
                 <source
                   media="(min-width: 1280px)"
                   srcset="/img/catalog-image/photo-1-desktop.jpg"
-                  width="1200"
-                  height="400"
+                  width="400"
+                  height="267"
+                />
+                <source
+                  media="(min-resolution: 2dppx)"
+                  type="image/webp"
+                  srcset="/img/catalog-image/photo-1-tablet@2x.webp"
+                  width="324"
+                  height="267"
                 />
                 <source
                   media="(min-width: 768px)"
-                  srcset="
-                    /img/catalog-image/photo-1-tablet.jpg,
-                    /img/catalog-image/photo-1-tablet@2x.jpg 2x
-                  "
-                  width="648"
-                  height="400"
+                  type="image/webp"
+                  srcset="/img/catalog-image/photo-1-tablet.webp"
+                  width="324"
+                  height="267"
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset="/img/catalog-image/photo-1-tablet.jpg"
+                  width="324"
+                  height="267"
+                />
+                <source
+                  media="(min-resolution: 2dppx)"
+                  type="image/webp"
+                  srcset="/img/catalog-image/photo-1-mobile@2x.webp"
+                  width="280"
+                  height="280"
                 />
                 <img
                   class="photo__image photo__image--fullscreen"
@@ -154,7 +118,6 @@
                   alt="фото дороги уходящей в закат"
                   width="280"
                   height="280"
-                  srcset="/img/catalog-image/photo-1-mobile@2x.jpg 2x"
                 />
               </picture>
               <div class="photo__inner">
@@ -187,8 +150,11 @@
             <div class="photo__content">
               <picture>
                 <source
+                  media="(min-width: 1280px)"
                   type="image/webp"
-                  srcset="/img/catalog-image/photo-2-mobile@2x.webp"
+                  srcset="/img/catalog-image/photo-2-desktop.webp"
+                  width="400"
+                  height="267"
                 />
                 <source
                   media="(min-width: 1280px)"
@@ -197,21 +163,36 @@
                   height="267"
                 />
                 <source
-                  media="(min-width: 768px)"
-                  srcset="
-                    /img/catalog-image/photo-2-tablet.jpg,
-                    /img/catalog-image/photo-2-tablet@2x.jpg 2x
-                  "
+                  media="(min-resolution: 2dppx)"
+                  type="image/webp"
+                  srcset="/img/catalog-image/photo-2-tablet@2x.webp"
                   width="324"
                   height="267"
                 />
+                <source
+                  media="(min-width: 768px)"
+                  type="image/webp"
+                  srcset="/img/catalog-image/photo-2-tablet.webp"
+                  width="324"
+                  height="267"
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset="/img/catalog-image/photo-2-tablet.jpg"
+                  width="324"
+                  height="267"
+                />
+                <source
+                  media="(min-resolution: 2dppx)"
+                  type="image/webp"
+                  srcset="/img/catalog-image/photo-2-mobile@2x.webp"
+                />
                 <img
-                  src="/img/catalog-image/photo-2-mobile.jpg"
-                  alt="местная растительность на фоне холмов"
                   class="photo__image"
+                  srcset="/img/catalog-image/photo-2-mobile.jpg"
                   width="280"
                   height="280"
-                  srcset="/img/catalog-image/photo-2-mobile@2x.jpg 2x"
+                  alt="растительность на фоне холмов"
                 />
               </picture>
 
@@ -245,8 +226,11 @@
             <div class="photo__content">
               <picture>
                 <source
+                  media="(min-width: 1280px)"
                   type="image/webp"
-                  srcset="/img/catalog-image/photo-3-mobile@2x.webp"
+                  srcset="/img/catalog-image/photo-3-desktop.webp"
+                  width="400"
+                  height="267"
                 />
                 <source
                   media="(min-width: 1280px)"
@@ -254,23 +238,39 @@
                   width="400"
                   height="267"
                 />
-
                 <source
-                  media="(min-width: 768px)"
-                  srcset="
-                    /img/catalog-image/photo-3-tablet.jpg,
-                    /img/catalog-image/photo-3-tablet@2x.jpg 2x
-                  "
+                  media="(min-resolution: 2dppx)"
+                  type="image/webp"
+                  srcset="/img/catalog-image/photo-3-tablet@2x.webp"
                   width="324"
                   height="267"
                 />
-                <img
-                  src="/img/catalog-image/photo-3-mobile.jpg"
-                  alt="крутая дорога на склоне"
-                  class="photo__image"
+                <source
+                  media="(min-width: 768px)"
+                  type="image/webp"
+                  srcset="/img/catalog-image/photo-3-tablet.webp"
+                  width="324"
+                  height="267"
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset="/img/catalog-image/photo-3-tablet.jpg"
+                  width="324"
+                  height="267"
+                />
+                <source
+                  media="(min-resolution: 2dppx)"
+                  type="image/webp"
+                  srcset="/img/catalog-image/photo-3-mobile@2x.webp"
                   width="280"
                   height="280"
-                  srcset="/img/catalog-image/photo-3-mobile@2x.jpg 2x"
+                />
+                <img
+                  class="photo__image"
+                  srcset="/img/catalog-image/photo-3-mobile.jpg"
+                  alt="извилистая дорога на склоне холма"
+                  width="280"
+                  height="280"
                 />
               </picture>
 
@@ -304,8 +304,11 @@
             <div class="photo__content">
               <picture>
                 <source
+                  media="(min-width: 1280px)"
                   type="image/webp"
-                  srcset="/img/catalog-image/photo-4-mobile@2x.webp"
+                  srcset="/img/catalog-image/photo-4-desktop.webp"
+                  width="400"
+                  height="267"
                 />
                 <source
                   media="(min-width: 1280px)"
@@ -314,21 +317,38 @@
                   height="267"
                 />
                 <source
-                  media="(min-width: 768px)"
-                  srcset="
-                    /img/catalog-image/photo-4-tablet.jpg,
-                    /img/catalog-image/photo-4-tablet@2x.jpg 2x
-                  "
+                  media="(min-resolution: 2dppx)"
+                  type="image/webp"
+                  srcset="/img/catalog-image/photo-4-tablet@2x.webp"
                   width="324"
                   height="267"
                 />
-                <img
-                  src="/img/catalog-image/photo-4-mobile.jpg"
-                  alt="далекая долина и холмы на ближнем фоне"
-                  class="photo__image"
+                <source
+                  media="(min-width: 768px)"
+                  type="image/webp"
+                  srcset="/img/catalog-image/photo-4-tablet.webp"
+                  width="324"
+                  height="267"
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset="/img/catalog-image/photo-4-tablet.jpg"
+                  width="324"
+                  height="267"
+                />
+                <source
+                  media="(min-resolution: 2dppx)"
+                  type="image/webp"
+                  srcset="/img/catalog-image/photo-4-mobile@2x.webp"
                   width="280"
                   height="280"
-                  srcset="/img/catalog-image/photo-4-mobile@2x.jpg 2x"
+                />
+                <img
+                  class="photo__image"
+                  srcset="/img/catalog-image/photo-4-mobile.jpg"
+                  alt="долина с холмами на ближнем фоне"
+                  width="280"
+                  height="280"
                 />
               </picture>
 

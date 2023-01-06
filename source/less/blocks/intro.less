@@ -5,14 +5,21 @@
 }
 
 .intro__image {
+  width: 320px;
+  height: 158px;
+  background: url("../img/index-image/bg-intro-mobile.jpg") no-repeat 50% 100%;
   position: relative;
+
+  @media (min-resolution: 2dppx) {
+    background: url("../img/index-image/bg-intro-mobile@2x.jpg") no-repeat 50%
+      100%;
+    background-size: 320px auto;
+  }
 
   &::before {
     position: absolute;
     content: "";
-    background-image: url("/img/svg/sedona.svg");
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
+    background: url("/img/sedona.svg") no-repeat;
     width: 230px;
     height: 40px;
     top: 45%;
@@ -23,9 +30,7 @@
   &::after {
     position: absolute;
     content: "";
-    background-image: url("/img/svg/intro-triangle-mobile.svg");
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
+    background: url("/img/index-image/intro-top.svg") no-repeat;
     width: 320px;
     height: 60px;
     bottom: -3px;
@@ -40,9 +45,7 @@
     &::before {
       position: absolute;
       content: "";
-      background-image: url("/img/svg/text-index-mobile.svg");
-      background-repeat: no-repeat;
-      background-position: center;
+      background: url("/img/text-index-mobile.svg") no-repeat;
       width: 282px;
       height: 214px;
       top: 50%;
@@ -66,12 +69,10 @@
       &::before {
         position: absolute;
         content: "";
-        background-image: url("/img/svg/intro-bottom.svg");
-        background-repeat: no-repeat;
-        background-position: center;
+        background: url("/img/index-image/intro-bottom.svg") no-repeat;
         width: 320px;
         height: 60px;
-        bottom: -78px;
+        bottom: -90px;
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 1;
@@ -96,6 +97,36 @@
 @media (min-width: @tablet-width) {
   .intro__wrapper {
     width: 768px;
+  }
+
+  .intro__image {
+    width: 768px;
+    height: 290px;
+    background: url("../img/index-image/bg-intro-tablet.jpg") no-repeat 50% 100%;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/index-image/bg-intro-tablet@2x.jpg");
+    }
+
+    &::before {
+      width: 460px;
+      height: 80px;
+      background: url("/img/sedona-desktop.svg") no-repeat 50% 50%;
+    }
+
+    &::after {
+      width: 768px;
+      background: url("../img/intro-triangle-tablet.svg") no-repeat 50% 50%;
+    }
+
+    &--index {
+      height: 518px;
+
+      &::before {
+        height: 350px;
+        background: url("/img/text-index-desktop.svg") no-repeat 50% 50%;
+      }
+    }
   }
 
   .intro__inner {
@@ -123,6 +154,9 @@
   .intro__image {
     width: 1200px;
     height: 301px;
+    background-image: url("../img/index-image/bg-intro-desktop.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
 
     &::after {
       width: 1200px;

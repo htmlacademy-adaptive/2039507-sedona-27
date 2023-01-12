@@ -18,93 +18,63 @@
     color: @white;
   }
 
-  &--icon {
-    background-color: @white;
+  &--advantage {
   }
 
-  &--advantage:not(:last-child) {
-    border-bottom: 1px solid @light-grey;
-  }
-}
+  @media (max-width: 767px) {
+    &--advantage:not(:last-child) {
+      &::before {
+        position: absolute;
+        content: "";
+        width: 280px;
+        height: 1px;
+        background-color: @light-grey;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+    }
 
-.description__content {
-  width: 237px;
-  padding-left: 20px;
+    &:first-child {
+      padding-top: 37px;
+    }
+  }
 }
 
 .description__image {
   width: 320px;
   height: 260px;
-
-  &--city {
-    background-image: url("../img/index-image/photo-city-mobile@1x.jpg");
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-  }
-
-  &--bridge {
-    background-image: url("../img/index-image/photo-bridge-mobile@1x.jpg");
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-  }
-
-  @media (min-resolution: 2dppx) {
-    &--city {
-      background-image: url("../img/index-image/photo-city-mobile@2x.jpg");
-      height: 256px;
-    }
-
-    &--bridge {
-      background-image: url("../img/index-image/photo-bridge-mobile@2x.jpg");
-      height: 256px;
-    }
-  }
 }
 
 .description__inner {
-  width: 284px;
-  padding: 37px 18px;
   text-align: center;
   text-transform: uppercase;
 
   &--has-image {
-    padding-top: 51px;
-    padding-bottom: 43px;
-  }
-
-  &--icon {
-    display: flex;
-    text-align: left;
-  }
-}
-
-.description__icon {
-  width: 40px;
-  height: 40px;
-
-  &--house,
-  &--burger,
-  &--gift {
-    fill: @blue;
+    padding-bottom: 40px;
   }
 }
 
 .description__title {
   margin: 0;
+  margin-bottom: 13px;
   padding: 0;
-  padding-top: 10px;
+  padding-top: 33px;
   font-size: 18px;
+  line-height: 26px;
   text-transform: uppercase;
 }
 
 .description__counter {
-  padding-top: 11px;
+  margin-bottom: 13px;
+  font-size: 14px;
+  line-height: 21px;
 }
 
 .description__quote {
   margin: 0;
   padding: 0;
-  padding-top: 17px;
+  padding-top: 4px;
   font-size: 14px;
   line-height: 21px;
 }
@@ -121,18 +91,21 @@
 
   .description__item {
     display: flex;
-
-    &--advantage:not(:last-child) {
-      border: none;
+    &--advantage {
+      padding: 53px 38px;
     }
   }
 
   .description__inner {
-    width: 190px;
-    padding: 53px 33px;
+    padding: 0;
+    width: 180px;
 
     &--has-image {
-      padding: 42px 33px;
+      padding: 41px 38px;
+
+      .description__title {
+        padding-top: 2px;
+      }
     }
 
     &--icon {
@@ -141,6 +114,18 @@
       text-align: center;
       align-items: center;
     }
+  }
+
+  .description__title {
+    padding: 0;
+    padding-bottom: 12px;
+    margin: 0 auto;
+    width: 149px;
+    font-size: 21px;
+  }
+
+  .description__counter {
+    margin-bottom: 20px;
   }
 
   .description__icon {
@@ -157,27 +142,8 @@
     width: 512px;
     height: 256px;
 
-    &--city {
-      background-image: url("../img/index-image/photo-city-tablet@1x.jpg");
-      background-repeat: no-repeat;
-      background-position: 50% 50%;
-    }
-
     &--bridge {
-      background-image: url("../img/index-image/photo-bridge-tablet@1x.jpg");
-      background-repeat: no-repeat;
-      background-position: 50% 50%;
       order: -1;
-    }
-
-    @media (min-resolution: 2dppx) {
-      &--city {
-        background-image: url("../img/index-image/photo-city-tablet@2x.jpg");
-      }
-
-      &--bridge {
-        background-image: url("../img/index-image/photo-bridge-tablet@2x.jpg");
-      }
     }
   }
 }
@@ -195,20 +161,6 @@
   .description__image {
     width: 800px;
     height: auto;
-
-    &--city {
-      background-image: url("../img/index-image/photo-city-tablet@2x.jpg");
-      background-repeat: no-repeat;
-      background-position: 50% 50%;
-      background-size: cover;
-    }
-
-    &--bridge {
-      background-image: url("../img/index-image/photo-bridge-tablet@2x.jpg");
-      background-repeat: no-repeat;
-      background-position: 50% 50%;
-      background-size: cover;
-    }
   }
 
   .description__title {

@@ -5,21 +5,26 @@
 }
 
 .intro__image {
+  position: relative;
   width: 320px;
   height: 158px;
-  background: url("../img/index-image/bg-intro-mobile.jpg") no-repeat 50% 100%;
-  position: relative;
+  background-image: url("../img/index-image/bg-intro-mobile.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
 
   @media (min-resolution: 2dppx) {
-    background: url("../img/index-image/bg-intro-mobile@2x.jpg") no-repeat 50%
-      100%;
+    background-image: url("../img/index-image/bg-intro-mobile@2x.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
     background-size: 320px auto;
   }
 
   &::before {
     position: absolute;
     content: "";
-    background: url("/img/sedona.svg") no-repeat;
+    background-image: url("/img/svg/SEDONA.svg");
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
     width: 230px;
     height: 40px;
     top: 45%;
@@ -30,12 +35,11 @@
   &::after {
     position: absolute;
     content: "";
-    background: url("/img/index-image/intro-top.svg") no-repeat;
-    width: 320px;
-    height: 60px;
-    bottom: -3px;
-    left: 50%;
-    transform: translate(-50%, 0);
+    background-image: url("/img/svg/intro-triangle.svg");
+    width: 768px;
+    height: 57px;
+    bottom: 0;
+    left: -440px;
   }
 
   &--index {
@@ -48,7 +52,7 @@
       background: url("/img/text-index-mobile.svg") no-repeat;
       width: 282px;
       height: 214px;
-      top: 50%;
+      top: 197px;
       left: 50%;
       transform: translate(-50%, -50%);
     }
@@ -56,10 +60,14 @@
 }
 
 .intro__inner {
-  margin-top: 32px;
-  padding: 0 20px;
+  width: 320px;
+  margin: 0 auto;
+  padding-top: 37px;
+  padding-bottom: 28px;
   text-align: center;
   text-transform: uppercase;
+  border-bottom: 1px solid @light-grey;
+  box-sizing: border-box;
 
   &--index {
     padding-bottom: 16px;
@@ -71,11 +79,10 @@
         content: "";
         background: url("/img/index-image/intro-bottom.svg") no-repeat;
         width: 320px;
-        height: 60px;
-        bottom: -90px;
+        height: 37px;
+        bottom: -55px;
         left: 50%;
         transform: translate(-50%, -50%);
-        z-index: 1;
       }
     }
   }
@@ -84,14 +91,16 @@
 .intro__title {
   margin: 0;
   padding: 0;
-  padding-bottom: 24px;
+  padding-bottom: 22px;
   font-size: 18px;
+  line-height: 27px;
 }
 
 .intro__paragraph {
   margin: 0;
   padding: 0;
   font-size: 14px;
+  line-height: 21px;
 }
 
 @media (min-width: @tablet-width) {
@@ -110,45 +119,72 @@
 
     &::before {
       width: 460px;
-      height: 80px;
-      background: url("/img/sedona-desktop.svg") no-repeat 50% 50%;
+      height: 78px;
+      background-image: url("/img/svg/SEDONA.svg");
+      background-repeat: no-repeat;
+      top: 46%;
+      left: 50%;
     }
 
     &::after {
       width: 768px;
-      background: url("../img/intro-triangle-tablet.svg") no-repeat 50% 50%;
+      background-position: 50% 50%;
+      bottom: -1px;
+      left: 0;
     }
 
     &--index {
+      position: relative;
       height: 518px;
 
       &::before {
+        position: absolute;
+        top: 252px;
         height: 350px;
-        background: url("/img/text-index-desktop.svg") no-repeat 50% 50%;
+        background-image: url("/img/text-index-desktop.svg");
+        background-repeat: no-repeat;
       }
     }
   }
 
   .intro__inner {
     margin: 0 auto;
-    margin-top: 115px;
-    padding-bottom: 102px;
-    width: 440px;
+    padding-top: 64px;
+    width: 434px;
+    border: none;
+    s &--index {
+      padding-top: 48px;
+      padding-bottom: 57px;
+    }
   }
 
   .intro__title {
-    font-size: 21px;
+    padding-bottom: 20px;
+    font-size: 30px;
     line-height: 26px;
   }
 
   .intro__paragraph {
-    line-height: 21px;
+    line-height: 24px;
   }
 }
 
 @media (min-width: @desktop-width) {
+  .intro {
+    max-width: 1200px;
+  }
+
   .intro__wrapper {
     width: 1200px;
+  }
+
+  .intro__inner {
+    padding-top: 115px;
+    padding-bottom: 40px;
+  }
+
+  .intro__title {
+    padding-bottom: 28px;
   }
 
   .intro__image {
@@ -161,9 +197,6 @@
     &::after {
       width: 1200px;
       height: 57px;
-      background-image: url("../img/intro-triangle-desktop.svg");
-      background-repeat: no-repeat;
-      background-position: 50% 100%;
     }
 
     &--index {

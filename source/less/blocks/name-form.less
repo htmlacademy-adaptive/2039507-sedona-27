@@ -1,25 +1,32 @@
 .name-form {
+  padding: 20px;
+  padding-bottom: 39px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
 .name-form__label {
-  padding-left: 17px;
+  padding-left: 16px;
   text-transform: uppercase;
   font-size: 14px;
+  line-height: 21px;
   color: #333333;
 }
 
 .name-form__input {
-  padding: 16px 0 16px 16px;
-  margin-bottom: 16px;
+  padding: 16px 0 15px 16px;
   box-sizing: border-box;
   width: 100%;
   border: none;
   background-color: @grey;
   font-size: 18px;
   font-weight: @bold;
+  line-height: 26px;
+
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
 
   &:hover {
     background-color: @grey-hover;
@@ -35,10 +42,21 @@
 
 @media (min-width: @tablet-width) {
   .name-form {
+    position: relative;
     width: 280px;
+    padding: 0;
     padding-right: 43px;
     border: none;
-    border-right: 1px solid @light-grey;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 1px;
+      height: 338px;
+      background-color: @light-grey;
+      top: -54px;
+      right: -1px;
+    }
   }
 }
 

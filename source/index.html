@@ -14,11 +14,11 @@
     <header class="main-header">
       <a href="index.html">
         <svg class="main-header__logo">
-          <use xlink:href="/img/sprite.svg#logo"></use>
+          <use xlink:href="/img/svg/sprite.svg#logo"></use>
         </svg>
       </a>
       <div class="main-header__wrapper">
-        <nav class="main-header__nav site-nav site-nav--opened site-nav__nojs">
+        <nav class="main-header__nav site-nav site-nav--closed site-nav__nojs">
           <button class="site-nav__toggle">
             <span class="visually-hidden">открыть меню</span>
           </button>
@@ -58,7 +58,7 @@
         <h1 class="visually-hidden">welcome</h1>
         <div class="intro__image intro__image--index"></div>
         <div class="intro__inner intro__inner--index">
-          <h2 class="intro__title">
+          <h2 class="intro__title intro__title--index">
             седона — небольшой городок в аризоне, заслуживающий большего!
           </h2>
           <p class="intro__paragraph">
@@ -132,7 +132,7 @@
                 width="40"
                 height="40"
               >
-                <use xlink:href="/img/sprite.svg#house-icon"></use>
+                <use xlink:href="/img/svg/sprite.svg#house-icon"></use>
               </svg>
               <div class="advantage__content">
                 <h2 class="advantage__title">жилье</h2>
@@ -148,7 +148,7 @@
                 width="40"
                 height="40"
               >
-                <use xlink:href="/img/sprite.svg#burger-icon"></use>
+                <use xlink:href="/img/svg/sprite.svg#burger-icon"></use>
               </svg>
               <div class="advantage__content">
                 <h2 class="advantage__title">еда</h2>
@@ -164,7 +164,7 @@
                 width="40"
                 height="40"
               >
-                <use xlink:href="/img/sprite.svg#gift-icon"></use>
+                <use xlink:href="/img/svg/sprite.svg#gift-icon"></use>
               </svg>
               <div class="advantage__content">
                 <h2 class="advantage__title">сувениры</h2>
@@ -223,34 +223,38 @@
             </div>
           </li>
 
-          <li class="description__item description__item--advantage">
-            <div class="description__inner">
-              <h2 class="description__title">небольшая площадь</h2>
-              <div class="description__counter">— №3 —</div>
-              <p class="description__quote">
-                все интересные места находятся очень близко
-              </p>
-            </div>
-          </li>
+          <li class="description__item benefits">
+            <ul class="benefits__list">
+              <li class="benefits__item">
+                <div class="benefits__inner">
+                  <h2 class="benefits__title">небольшая площадь</h2>
+                  <div class="benefits__counter">— №3 —</div>
+                  <p class="benefits__quote">
+                    все интересные места находятся очень близко
+                  </p>
+                </div>
+              </li>
 
-          <li class="description__item description__item--advantage">
-            <div class="description__inner">
-              <h2 class="description__title">красивая дорога</h2>
-              <div class="description__counter">— №4 —</div>
-              <p class="description__quote">
-                ехать в седону из лас-вегаса совсем не скучно!
-              </p>
-            </div>
-          </li>
+              <li class="benefits__item">
+                <div class="benefits__inner">
+                  <h2 class="benefits__title">красивая дорога</h2>
+                  <div class="benefits__counter">— №4 —</div>
+                  <p class="benefits__quote">
+                    ехать в седону из лас-вегаса совсем не скучно!
+                  </p>
+                </div>
+              </li>
 
-          <li class="description__item description__item--advantage">
-            <div class="description__inner">
-              <h2 class="description__title">мало туристов</h2>
-              <div class="description__counter">— №5 —</div>
-              <p class="description__quote">
-                большинство едет в гранд каньон и толпится там
-              </p>
-            </div>
+              <li class="benefits__item">
+                <div class="benefits__inner">
+                  <h2 class="benefits__title">мало туристов</h2>
+                  <div class="benefits__counter">— №5 —</div>
+                  <p class="benefits__quote">
+                    большинство едет в гранд каньон и толпится там
+                  </p>
+                </div>
+              </li>
+            </ul>
           </li>
         </ul>
       </div>

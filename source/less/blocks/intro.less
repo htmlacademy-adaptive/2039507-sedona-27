@@ -38,7 +38,7 @@
     background-image: url("/img/svg/intro-triangle.svg");
     width: 768px;
     height: 57px;
-    bottom: 0;
+    bottom: -1px;
     left: -440px;
   }
 
@@ -62,11 +62,10 @@
 .intro__inner {
   width: 320px;
   margin: 0 auto;
-  padding-top: 37px;
-  padding-bottom: 28px;
+  padding: 0 20px;
+  padding-top: 39px;
   text-align: center;
   text-transform: uppercase;
-  border-bottom: 1px solid @light-grey;
   box-sizing: border-box;
 
   &--index {
@@ -91,7 +90,7 @@
 .intro__title {
   margin: 0;
   padding: 0;
-  padding-bottom: 22px;
+  padding-bottom: 24px;
   font-size: 18px;
   line-height: 27px;
 }
@@ -152,20 +151,26 @@
     padding-top: 64px;
     width: 434px;
     border: none;
-    s &--index {
+
+    &--index {
       padding-top: 48px;
       padding-bottom: 57px;
+    }
+
+    &--catalog {
+      padding: 0;
+      padding-top: 68px;
     }
   }
 
   .intro__title {
-    padding-bottom: 20px;
+    padding-bottom: 30px;
     font-size: 30px;
     line-height: 26px;
   }
 
   .intro__paragraph {
-    line-height: 24px;
+    line-height: 21px;
   }
 }
 
@@ -181,10 +186,15 @@
   .intro__inner {
     padding-top: 115px;
     padding-bottom: 40px;
+
+    &--catalog {
+      padding: 0;
+      padding-top: 106px;
+    }
   }
 
   .intro__title {
-    padding-bottom: 28px;
+    padding-bottom: 31px;
   }
 
   .intro__image {

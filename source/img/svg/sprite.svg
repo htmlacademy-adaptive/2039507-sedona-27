@@ -49,4 +49,5 @@
   <symbol id="email-icon" viewBox="0 0 18 18">
     <path d="m9 11-1-.3L1 7v7c0 .5.5 1 1 1h14c.5 0 1-.5 1-1V7l-7 3.7-1 .3Zm7-8H2a1 1 0 0 0-1 1v.8L9 9l8-4.2V4c0-.5-.5-1-1-1Z"/>
   </symbol>
+
 </svg>

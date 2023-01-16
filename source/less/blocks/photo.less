@@ -13,9 +13,10 @@
 .photo__item {
   position: relative;
   padding: 25px 0;
+
   @media (max-width: 767px) {
     &:first-child {
-      &:before {
+      &::before {
         position: absolute;
         content: "";
         width: 320px;
@@ -27,7 +28,7 @@
       }
     }
 
-    &:after {
+    &::after {
       position: absolute;
       content: "";
       width: 320px;

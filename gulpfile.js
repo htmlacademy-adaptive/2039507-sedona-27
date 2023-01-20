@@ -2,21 +2,11 @@ import gulp from "gulp";
 import plumber from "gulp-plumber";
 import less from "gulp-less";
 import postcss from "gulp-postcss";
-import csso from "postcss-csso";
 import autoprefixer from "autoprefixer";
+import csso from "postcss-csso";
 import rename from "gulp-rename";
-import browser from "browser-sync";
 import htmlmin from "gulp-htmlmin";
-import squoosh from "gulp-libsquoosh";
-
-//Html
-
-export const html = () => {
-  return gulp
-    .src("source/*.html")
-    .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest("build"));
-};
+import browser from "browser-sync";
 
 // Styles
 
@@ -26,55 +16,33 @@ export const styles = () => {
     .pipe(plumber())
     .pipe(less())
     .pipe(postcss([autoprefixer(), csso()]))
-    .pipe(rename("style.min.css"))
-    .pipe(gulp.dest("build/css", { sourcemaps: "." }))
+    .pipe(rename("styl.min.css"))
+    .pipe(gulp.dest("build/css/", { sourcemaps: "." }))
     .pipe(browser.stream());
 };
 
-//Images
+//Html
 
-export const optimizeImages = () => {
+export const minify = () => {
   return gulp
-    .src("source/img/**/*.{jpg,png}")
-    .pipe(squoosh())
-    .pipe(gulp.dest("build/img"));
-};
-
-export const copyImages = () => {
-  return gulp.src("source/img/**/*.{jpg,png}").pipe(gulp.dest("build/img"));
-};
-
-// WebP
-
-export const createWebp = () => {
-  return gulp
-    .src("source/img/**/*.{jpg,png}")
-    .pipe(squoosh({ webp: {} }))
-    .pipe(gulp.dest("build/img"));
-};
-
-//SVG
-
-export const svg = () => {
-  return gulp
-    .src("source/img/**/*.{jpg,png}")
-    .pipe(squoosh({ webp: {} }))
-    .pipe(gulp.dest("build/img"));
+    .src("source/*.html")
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest("build/"));
 };
 
 // Server
 
-function server(done) {
+const server = (done) => {
   browser.init({
     server: {
-      baseDir: "build",
+      baseDir: "source",
     },
     cors: true,
     notify: false,
     ui: false,
   });
   done();
-}
+};
 
 // Watcher
 
@@ -83,4 +51,4 @@ const watcher = () => {
   gulp.watch("source/*.html").on("change", browser.reload);
 };
 
-export default gulp.series(html, styles, server, watcher);
+export default gulp.series(styles, server, watcher);

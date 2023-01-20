@@ -7,7 +7,9 @@ import csso from "postcss-csso";
 import rename from "gulp-rename";
 import htmlmin from "gulp-htmlmin";
 import terser from "gulp-terser";
-import gulpSquoosh from "gulp-squoosh";
+import squoosh from "gulp-libsquoosh";
+import svgo from "gulp-svgo";
+import svgstore from "gulp-svgstore";
 import browser from "browser-sync";
 
 // Styles
@@ -40,15 +42,33 @@ export const script = () => {
 
 //Images
 
-export const optimizeImages = () => {
+export const images = () => {
   return gulp
-    .src("source/img/**/*.{jpg,png}")
-    .pipe(gulpSquoosh())
+    .src(["source/img/**/*.{jpg,png}", "!source/img/favicons"])
+    .pipe(squoosh())
     .pipe(gulp.dest("build/img"));
 };
 
 export const copyImages = () => {
-  return gulp.src("source/img").pipe(gulp.dest("build/img"));
+  return gulp.src("source/img/**/*.{jpg,png}").pipe(gulp.dest("build/img"));
+};
+
+//SVG
+
+export const svg = () => {
+  return gulp
+    .src(["source/img/*.svg", "!source/img/icons/*.svg"])
+    .pipe(svgo())
+    .pipe(gulp.dest("build/img"));
+};
+
+export const sprite = () => {
+  return gulp
+    .src("source/img/icons/*.svg")
+    .pipe(svgo())
+    .pipe(svgstore({ inlineSvg: true }))
+    .pipe(rename("sprite.svg"))
+    .pipe(gulp.dest("build/img"));
 };
 
 // Server

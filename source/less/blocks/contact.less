@@ -1,4 +1,5 @@
 .contact {
+  padding: 19px 20px;
   width: 280px;
   display: flex;
   flex-direction: column;
@@ -6,23 +7,27 @@
 }
 
 .contact__label {
-  padding-left: 17px;
+  padding-left: 15px;
   text-transform: uppercase;
   font-size: 14px;
+  line-height: 21px;
   color: #333333;
 }
 
 .contact__input {
   position: relative;
-  padding: 19px 0 19px 16px;
-  margin-bottom: 16px;
-  display: block;
+  padding: 17px 0 15px 16px;
   box-sizing: border-box;
   width: 100%;
   border: none;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: @bold;
+  line-height: 26px;
   background-color: @white-grey;
+
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
 
   &:hover {
     background: @grey-hover;
@@ -46,29 +51,34 @@
   background-color: @deep-grey;
 
   &--phone {
-    top: 38px;
+    top: 40px;
     right: 20px;
   }
 
   &--email {
-    bottom: 53px;
+    bottom: 35px;
     right: 20px;
   }
 }
 
 @media (min-width: @tablet-width) {
   .contact {
-    padding-left: 43px;
+    padding: 0;
+    padding-left: 45px;
+  }
+
+  .contact__input {
+    padding: 16px;
   }
 
   .contact__icon {
     &--phone {
-      top: 20px;
+      top: 21px;
       right: 0;
     }
 
     &--email {
-      bottom: 90px;
+      bottom: 93px;
       right: 0;
     }
   }

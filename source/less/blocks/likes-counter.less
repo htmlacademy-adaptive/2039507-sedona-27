@@ -1,20 +1,43 @@
 .likes-counter {
-  padding-top: 11px;
+  padding-top: 15px;
   display: flex;
   align-items: center;
 }
 
 .likes-counter__button {
-  padding-right: 14px;
+  width: 23px;
+  height: 21px;
+  position: relative;
   border: none;
   background-color: inherit;
 }
 
 .likes-counter__icon {
-  width: 25px;
+  position: absolute;
+  content: "";
+  top: -5px;
+  left: -1px;
+  width: 23px;
   height: 21px;
   fill: @black;
   opacity: 0.3;
+}
+
+.likes-counter__quantity {
+  padding-left: 14px;
+  font-size: 14px;
+  font-weight: @bold;
+  line-height: 21px;
+}
+
+@media (min-width: 768px) {
+  .likes-counter {
+    padding: 0;
+  }
+
+  .likes-counter__quantity {
+    padding-left: 8px;
+  }
 }
 
 @media (min-width: @desktop-width) {

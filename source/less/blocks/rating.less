@@ -1,26 +1,35 @@
+.rating {
+  padding: 0 20px;
+  padding-top: 16px;
+  padding-bottom: 20px;
+}
+
 .rating__list {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.rating__item {
-  padding: 8px 0;
+@media (max-width: 767px) {
+  .rating__item:not(:last-child) {
+    padding-bottom: 8px;
+  }
 }
 
 .rating__label {
   position: relative;
   display: block;
-  padding: 12px 0;
+  padding: 14px 0;
   padding-left: 62px;
   font-size: 18px;
   font-weight: @bold;
+  line-height: 26px;
   text-align: left;
 }
 
 .rating__mark {
   position: absolute;
-  top: 0;
+  top: 3px;
   left: 0;
   width: 46px;
   height: 46px;
@@ -55,16 +64,19 @@
 
 @media (min-width: @tablet-width) {
   .rating {
+    padding: 0;
     width: 648px;
   }
 
   .rating__list {
+    padding-left: 35px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   .rating__item {
-    padding-right: 80px;
+    padding-right: 51px;
   }
 }
 
@@ -73,7 +85,7 @@
     width: 960px;
   }
 
-  .rating__item {
-    padding-right: 78px;
+  .rating__list {
+    padding-left: 53px;
   }
 }

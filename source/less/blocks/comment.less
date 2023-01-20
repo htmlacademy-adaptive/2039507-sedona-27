@@ -1,18 +1,20 @@
 .comment {
-  margin: 0 auto;
+  padding: 20px;
   display: flex;
   flex-direction: column;
 }
 
 .comment__field {
   width: 280px;
-  margin-bottom: 56px;
+  min-height: 150px;
+  margin-bottom: 55px;
   padding: 16px;
   border: none;
   background-color: @white-grey;
   font-family: "PT Sans", sans-serif;
   font-size: 18px;
   font-weight: @bold;
+  line-height: 26px;
   box-sizing: border-box;
 
   &::-webkit-input-placeholder {
@@ -25,17 +27,22 @@
 }
 
 .comment__button {
-  padding: 16px 0;
+  padding: 15px 0;
+  padding-top: 17px;
 }
 
 .comment__footnote {
-  margin-top: 3px;
+  font-size: 12px;
+  line-height: 26px;
   text-align: right;
   color: @dark-grey;
+  text-transform: uppercase;
 }
 
 @media (min-width: @tablet-width) {
   .comment {
+    margin-bottom: 31px;
+    padding: 0;
     width: 648px;
     display: flex;
     flex-wrap: wrap;
@@ -46,10 +53,17 @@
 
   .comment__field {
     width: 100%;
+    min-height: 160px;
+    margin-bottom: 46px;
   }
 
   .comment__button {
     width: 50%;
+  }
+
+  .comment__footnote {
+    font-size: 14px;
+    line-height: 21px;
   }
 }
 

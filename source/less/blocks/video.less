@@ -5,6 +5,7 @@
 
 .video__inner {
   padding: 20px 6px;
+  padding-bottom: 38px;
   text-transform: uppercase;
   text-align: center;
 }
@@ -13,18 +14,31 @@
   margin: 0;
   padding: 0;
   padding-bottom: 25px;
-  font-size: 20px;
+  font-size: 18px;
+  line-height: 26px;
 }
 
 .video__paragraph {
   margin: 0;
   padding: 0;
+  font-size: 14px;
+  line-height: 18px;
 }
 
 .video__image {
-  background-image: url("/img/catalog-image/video-mobile.jpg");
+  position: relative;
   width: 280px;
   height: 177px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 48px;
+    height: 54px;
+    top: 62px;
+    left: 116px;
+    background-image: url("/img/svg/play.svg");
+  }
 }
 
 @media (min-width: @tablet-width) {
@@ -33,30 +47,44 @@
   }
 
   .video__inner {
-    padding: 0 70px;
-    margin-top: 58px;
-    margin-bottom: 66px;
+    padding: 0 100px;
+    padding-top: 58px;
+    padding-bottom: 89px;
+  }
+
+  .video__title {
+    padding-bottom: 30px;
+    font-size: 30px;
+    line-height: 26px;
   }
 
   .video__image {
-    background-image: url("/img/catalog-image/video-tablet.jpg");
     width: 648px;
     height: 500px;
+
+    &::before {
+      top: 220px;
+      left: 300px;
+    }
   }
 }
 
 @media (min-width: @desktop-width) {
   .video__wrapper {
+    padding-bottom: 46px;
     width: 800px;
   }
 
   .video__inner {
-    padding: 0 140px;
+    padding-top: 64px;
   }
 
   .video__image {
-    background-image: url("/img/catalog-image/video-desktop.jpg");
     width: 800px;
     height: 500px;
+
+    &::before {
+      left: 375px;
+    }
   }
 }

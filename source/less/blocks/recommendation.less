@@ -6,19 +6,28 @@
 .recommendation__inner {
   width: 284px;
   margin: 0 auto;
-  padding: 35px 0 49px 0;
+  padding: 40px 0 49px 0;
   text-align: center;
   display: flex;
   flex-direction: column;
 }
 
 .recommendation__title {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 18px;
   text-transform: uppercase;
+  font-size: 21px;
+  line-height: 28px;
 }
 
 .recommendation__quote {
-  padding-bottom: 25px;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 32px;
   text-transform: uppercase;
+  font-size: 14px;
+  line-height: 21px;
 }
 
 .recommendation__button {
@@ -41,16 +50,37 @@
   }
 
   .recommendation__inner {
+    padding: 61px 0;
     width: 465px;
   }
 
   .recommendation__title {
-    font-size: 28px;
+    padding-bottom: 32px;
+    font-size: 30px;
+    line-height: 26px;
+  }
+
+  .recommendation__quote {
+    padding-bottom: 40px;
+    font-size: 16px;
+    line-height: 21px;
   }
 }
 
 @media (min-width: @desktop-width) {
   .recommendation__wrapper {
     width: 1200px;
+  }
+
+  .recommendation__inner {
+    padding: 61px 0;
+  }
+
+  .recommendation__quote {
+    padding-bottom: 42px;
+  }
+
+  .recommendation__button {
+    margin-bottom: 8px;
   }
 }

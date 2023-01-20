@@ -7,6 +7,7 @@ import csso from "postcss-csso";
 import rename from "gulp-rename";
 import htmlmin from "gulp-htmlmin";
 import terser from "gulp-terser";
+import gulpSquoosh from "gulp-squoosh";
 import browser from "browser-sync";
 
 // Styles
@@ -18,7 +19,7 @@ export const styles = () => {
     .pipe(less())
     .pipe(postcss([autoprefixer(), csso()]))
     .pipe(rename("styl.min.css"))
-    .pipe(gulp.dest("build/css/", { sourcemaps: "." }))
+    .pipe(gulp.dest("build/css", { sourcemaps: "." }))
     .pipe(browser.stream());
 };
 
@@ -28,13 +29,26 @@ export const minify = () => {
   return gulp
     .src("source/*.html")
     .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest("build/"));
+    .pipe(gulp.dest("build"));
 };
 
 //Script
 
 export const script = () => {
   return gulp.src("source/js/*.js").pipe(terser()).pipe(gulp.dest("build/js"));
+};
+
+//Images
+
+export const optimizeImages = () => {
+  return gulp
+    .src("source/img/**/*.{jpg,png}")
+    .pipe(gulpSquoosh())
+    .pipe(gulp.dest("build/img"));
+};
+
+export const copyImages = () => {
+  return gulp.src("source/img").pipe(gulp.dest("build/img"));
 };
 
 // Server

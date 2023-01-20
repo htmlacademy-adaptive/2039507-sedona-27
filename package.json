@@ -6,8 +6,10 @@
     "@htmlacademy/editorconfig-cli": "1.0.0",
     "@types/gulp-sourcemaps": "^0.0.35",
     "@types/gulp-svgmin": "^1.2.2",
+    "@types/gulp-terser": "^1.2.1",
     "autoprefixer": "10.4.0",
     "browser-sync": "2.27.7",
+    "del": "^7.0.0",
     "gulp": "4.0.2",
     "gulp-htmlmin": "^5.0.1",
     "gulp-less": "5.0.0",
@@ -30,7 +32,7 @@
     "stylelint": "stylelint \"source/less/**/*.less\" --syntax less",
     "lint": "npm run editorconfig && npm run stylelint",
     "scripts": "gulp scripts",
-    "build": "gulp styles",
+    "build": "gulp build",
     "start": "gulp"
   },
   "browserslist": [

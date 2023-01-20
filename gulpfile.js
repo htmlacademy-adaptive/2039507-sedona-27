@@ -10,6 +10,7 @@ import terser from "gulp-terser";
 import squoosh from "gulp-libsquoosh";
 import svgo from "gulp-svgo";
 import svgstore from "gulp-svgstore";
+import { deleteAsync as del } from "del";
 import browser from "browser-sync";
 
 // Styles
@@ -20,14 +21,14 @@ export const styles = () => {
     .pipe(plumber())
     .pipe(less())
     .pipe(postcss([autoprefixer(), csso()]))
-    .pipe(rename("styl.min.css"))
+    .pipe(rename("style.min.css"))
     .pipe(gulp.dest("build/css", { sourcemaps: "." }))
     .pipe(browser.stream());
 };
 
 //Html
 
-export const minify = () => {
+const minify = () => {
   return gulp
     .src("source/*.html")
     .pipe(htmlmin({ collapseWhitespace: true }))
@@ -36,39 +37,52 @@ export const minify = () => {
 
 //Script
 
-export const script = () => {
+const script = () => {
   return gulp.src("source/js/*.js").pipe(terser()).pipe(gulp.dest("build/js"));
 };
 
 //Images
 
-export const images = () => {
+const optimizeImages = () => {
   return gulp
     .src(["source/img/**/*.{jpg,png}", "!source/img/favicons"])
     .pipe(squoosh())
     .pipe(gulp.dest("build/img"));
 };
 
-export const copyImages = () => {
+const copyImages = () => {
   return gulp.src("source/img/**/*.{jpg,png}").pipe(gulp.dest("build/img"));
 };
 
 //SVG
 
-export const svg = () => {
+const svg = () => {
   return gulp
-    .src(["source/img/*.svg", "!source/img/icons/*.svg"])
+    .src(["source/img/**/*.svg", "!source/img/icons/*.svg"])
     .pipe(svgo())
     .pipe(gulp.dest("build/img"));
 };
 
-export const sprite = () => {
+const sprite = () => {
   return gulp
     .src("source/img/icons/*.svg")
     .pipe(svgo())
     .pipe(svgstore({ inlineSvg: true }))
     .pipe(rename("sprite.svg"))
-    .pipe(gulp.dest("build/img"));
+    .pipe(gulp.dest("build/img/"));
+};
+
+const copy = (done) => {
+  gulp
+    .src(["source/fonts/*.{woff2,woff}", "source/*.ico"], { base: "source" })
+    .pipe(gulp.dest("build"));
+  done();
+};
+
+//Clean
+
+const clean = () => {
+  return del("build");
 };
 
 // Server
@@ -76,7 +90,7 @@ export const sprite = () => {
 const server = (done) => {
   browser.init({
     server: {
-      baseDir: "source",
+      baseDir: "build",
     },
     cors: true,
     notify: false,
@@ -85,11 +99,35 @@ const server = (done) => {
   done();
 };
 
+//Reload
+
+const reload = (done) => {
+  browser.reload();
+  done();
+};
+
 // Watcher
 
 const watcher = () => {
   gulp.watch("source/less/**/*.less", gulp.series(styles));
   gulp.watch("source/*.html").on("change", browser.reload);
+  gulp.watch("source/js*.js").on("change", browser.reload);
 };
 
-export default gulp.series(styles, server, watcher);
+//Build
+
+export const build = gulp.series(
+  clean,
+  copy,
+  optimizeImages,
+  gulp.parallel(styles, minify, script, svg, sprite)
+);
+
+//Default
+
+export default gulp.series(
+  clean,
+  copy,
+  gulp.parallel(styles, minify, script, svg, sprite),
+  gulp.series(server, watcher)
+);

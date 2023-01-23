@@ -14,13 +14,13 @@
     <header class="main-header">
       <a href="index.html">
         <svg class="main-header__logo">
-          <use xlink:href="/img/svg/sprite.svg#logo"></use>
+          <use xlink:href="/img/sprite.svg#logo"></use>
         </svg>
       </a>
       <div class="main-header__wrapper">
         <nav class="main-header__nav site-nav site-nav--closed site-nav--nojs">
           <button class="site-nav__toggle">
-            <span class="visually-hidden">открыть меню</span>
+            <span class="visually-hidden">открыть меню</span>""
           </button>
           <div class="site-nav__wrapper">
             <ul class="site-nav__list">
@@ -81,36 +81,34 @@
                 седона не аттракцион для туристов, там течет своя жизнь
               </p>
             </div>
-            <div class="description__image description__image--city">
-              <picture>
-                <source
-                  media="(min-width: 1280px)"
-                  srcset="/img/index-image/photo-city-desktop@1x.jpg"
-                />
-                <source
-                  media="(min-width: 768px)"
-                  srcset="
-                    /img/index-image/photo-bridge-tablet@1x.jpg,
-                    /img/index-image/photo-bridge-tablet@2x.jpg
-                  "
-                />
-                <img
-                  src="/img/index-image/photo-city@1x.jpg"
-                  alt="город Седона"
-                  srcset="/img/index-image/photo-city-mobile@2x.jpg"
-                />
-              </picture>
-            </div>
+
+            <picture>
+              <source
+                media="(min-width: 1280px)"
+                srcset="/img/index-image/photo-city-desktop@1x.jpg"
+              />
+              <source
+                media="(min-width: 768px)"
+                srcset="
+                  /img/index-image/photo-city-tablet@1x.jpg,
+                  /img/index-image/photo-city-tablet@2x.jpg
+                "
+              />
+              <img
+                class="description__image description__image--city"
+                src="/img/index-image/photo-city-mobile@1x.jpg"
+                width="320"
+                height="280"
+                alt="город Седона"
+                srcset="/img/index-image/photo-city-mobile@2x.jpg"
+              />
+            </picture>
           </li>
 
           <li class="description__item advantage">
             <div class="advantage__item">
-              <svg
-                class="advantage__icon advantage__icon--house"
-                width="40"
-                height="40"
-              >
-                <use xlink:href="/img/svg/sprite.svg#house-icon"></use>
+              <svg class="advantage__icon advantage__icon--house">
+                <use xlink:href="/img/sprite.svg#house"></use>
               </svg>
               <div class="advantage__content">
                 <h2 class="advantage__title">жилье</h2>
@@ -121,12 +119,8 @@
             </div>
 
             <div class="advantage__item">
-              <svg
-                class="advantage__icon advantage__icon--burger"
-                width="40"
-                height="40"
-              >
-                <use xlink:href="/img/svg/sprite.svg#burger-icon"></use>
+              <svg class="advantage__icon advantage__icon--burger">
+                <use xlink:href="/img/sprite.svg#burger"></use>
               </svg>
               <div class="advantage__content">
                 <h2 class="advantage__title">еда</h2>
@@ -137,12 +131,8 @@
             </div>
 
             <div class="advantage__item">
-              <svg
-                class="advantage__icon advantage__icon--gift"
-                width="40"
-                height="40"
-              >
-                <use xlink:href="/img/svg/sprite.svg#gift-icon"></use>
+              <svg class="advantage__icon advantage__icon--gift">
+                <use xlink:href="/img/sprite.svg#gift"></use>
               </svg>
               <div class="advantage__content">
                 <h2 class="advantage__title">сувениры</h2>
@@ -161,23 +151,25 @@
                 да, по нему можно пройти! если вы осмелитесь, конечно
               </p>
             </div>
-            <div class="description__image description__image--bridge">
-              <picture>
-                <source
-                  media="(min-width: 1280px)"
-                  srcset="/img/index-image/photo-bridge-desktop@1x.jpg"
-                />
-                <source
-                  media="(min-width: 768px)"
-                  srcset="/img/index-image/photo-bridge-tablet@1x.jpg"
-                />
-                <img
-                  src="/img/index-image/photo-bridge-mobile@1x.jpg"
-                  srcset="/img/index-image/photo-bridge-mobile@2x.jpg"
-                  alt="Мост Дьявола"
-                />
-              </picture>
-            </div>
+
+            <picture>
+              <source
+                media="(min-width: 1280px)"
+                srcset="/img/index-image/photo-bridge-desktop@1x.jpg"
+              />
+              <source
+                media="(min-width: 768px)"
+                srcset="/img/index-image/photo-bridge-tablet@1x.jpg"
+              />
+              <img
+                class="description__image description__image--bridge"
+                srcset="/img/index-image/photo-bridge-mobile@2x.jpg"
+                alt="Мост Дьявола"
+                src="/img/index-image/photo-bridge-mobile@1x.jpg"
+                width="320"
+                height="260"
+              />
+            </picture>
           </li>
 
           <li class="description__item benefits">
@@ -257,7 +249,7 @@
           <li class="socials__item">
             <a href="#" class="socials__link">
               <svg class="socials__icon button" width="24" height="24">
-                <use xlink:href="/img/svg/sprite.svg#vk-icon"></use>
+                <use xlink:href="/img/sprite.svg#vk"></use>
               </svg>
             </a>
           </li>
@@ -265,7 +257,7 @@
           <li class="socials__item">
             <a href="#" class="socials__link">
               <svg class="socials__icon button" width="24" height="24">
-                <use xlink:href="/img/svg/sprite.svg#telegram-icon"></use>
+                <use xlink:href="/img/sprite.svg#telegram"></use>
               </svg>
             </a>
           </li>
@@ -273,7 +265,7 @@
           <li class="socials__item">
             <a href="#" class="socials__link">
               <svg class="socials__icon button" width="24" height="24">
-                <use xlink:href="/img/svg/sprite.svg#youtube-icon"></use>
+                <use xlink:href="/img/sprite.svg#youtube"></use>
               </svg>
             </a>
           </li>
@@ -281,7 +273,7 @@
 
         <div class="footer__dev developer">
           <svg class="developer__icon">
-            <use xlink:href="/img/svg/sprite.svg#dev-icon"></use>
+            <use xlink:href="/img/sprite.svg#dev"></use>
           </svg>
         </div>
       </div>

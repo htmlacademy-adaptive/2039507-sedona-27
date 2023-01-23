@@ -22,7 +22,7 @@ export const styles = () => {
     .pipe(less())
     .pipe(postcss([autoprefixer(), csso()]))
     .pipe(rename("style.min.css"))
-    .pipe(gulp.dest("build/css", { sourcemaps: "." }))
+    .pipe(gulp.dest("build/css/", { sourcemaps: "." }))
     .pipe(browser.stream());
 };
 
@@ -32,26 +32,35 @@ const minify = () => {
   return gulp
     .src("source/*.html")
     .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest("build"));
+    .pipe(gulp.dest("build/"));
 };
 
 //Script
 
 const script = () => {
-  return gulp.src("source/js/*.js").pipe(terser()).pipe(gulp.dest("build/js"));
+  return gulp.src("source/js/*.js").pipe(terser()).pipe(gulp.dest("build/js/"));
 };
 
 //Images
 
 const optimizeImages = () => {
   return gulp
-    .src(["source/img/**/*.{jpg,png}", "!source/img/favicons"])
+    .src("source/img/**/*.{jpg,png}")
     .pipe(squoosh())
-    .pipe(gulp.dest("build/img"));
+    .pipe(gulp.dest("build/img/"));
 };
 
 const copyImages = () => {
-  return gulp.src("source/img/**/*.{jpg,png}").pipe(gulp.dest("build/img"));
+  return gulp.src("source/img/**/*.{jpg,png}").pipe(gulp.dest("build/img/"));
+};
+
+//Webp
+
+export const createWebp = () => {
+  return gulp
+    .src("source/img/**/*.{jpg,png}", "!source/img/favicons")
+    .pipe(squoosh({ webp: {} }))
+    .pipe(gulp.dest("build/img/"));
 };
 
 //SVG
@@ -60,7 +69,7 @@ const svg = () => {
   return gulp
     .src(["source/img/**/*.svg", "!source/img/icons/*.svg"])
     .pipe(svgo())
-    .pipe(gulp.dest("build/img"));
+    .pipe(gulp.dest("build/img/"));
 };
 
 const sprite = () => {
@@ -75,14 +84,14 @@ const sprite = () => {
 const copy = (done) => {
   gulp
     .src(["source/fonts/*.{woff2,woff}", "source/*.ico"], { base: "source" })
-    .pipe(gulp.dest("build"));
+    .pipe(gulp.dest("build/"));
   done();
 };
 
 //Clean
 
 const clean = () => {
-  return del("build");
+  return del("build/");
 };
 
 // Server
@@ -90,7 +99,7 @@ const clean = () => {
 const server = (done) => {
   browser.init({
     server: {
-      baseDir: "build",
+      baseDir: "build/",
     },
     cors: true,
     notify: false,
@@ -120,14 +129,16 @@ export const build = gulp.series(
   clean,
   copy,
   optimizeImages,
+  createWebp,
   gulp.parallel(styles, minify, script, svg, sprite)
 );
 
-//Default
+// //Default
 
 export default gulp.series(
   clean,
   copy,
+  copyImages,
   gulp.parallel(styles, minify, script, svg, sprite),
   gulp.series(server, watcher)
 );

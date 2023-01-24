@@ -6,8 +6,10 @@
 .advantage__item {
   position: relative;
 
-  &:not(:last-child) {
-    padding-bottom: 22px;
+  @media (max-width: 767px) {
+    &:not(:last-child) {
+      margin-bottom: 23px;
+    }
   }
 }
 
@@ -53,7 +55,7 @@
   }
 
   .advantage__item {
-    padding: 60px 33px;
+    padding: 60px 40px;
     padding-top: 156px;
     text-align: center;
   }
@@ -95,7 +97,7 @@
 
 @media (min-width: @desktop-width) {
   .advantage__item {
-    padding: 69px 50px;
+    padding: 69px 57px;
     padding-top: 170px;
   }
 

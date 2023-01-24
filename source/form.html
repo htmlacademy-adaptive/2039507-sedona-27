@@ -8,6 +8,34 @@
     <link rel="icon" href="favicon.ico" />
     <link rel="icon" href="/img/favicons/icon.svg" type="image/svg+xml" />
     <link rel="icon" href="/img/favicons/favicon.png" />
+    <link
+      rel="preload"
+      href="fonts/ptsansbold.woff"
+      type="font/woff"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="fonts/ptsansbold.woff2"
+      type="font/woff2"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="fonts/ptsans.woff"
+      type="font/woff"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="fonts/ptsans.woff2"
+      type="font/woff2"
+      as="font"
+      crossorigin="anonymous"
+    />
     <title>Седона: Форма</title>
   </head>
 
@@ -15,11 +43,11 @@
     <header class="main-header">
       <a href="index.html">
         <svg class="main-header__logo">
-          <use xlink:href="/img/svg/sprite.svg#logo"></use>
+          <use xlink:href="/img/sprite.svg#logo"></use>
         </svg>
       </a>
       <div class="main-header__wrapper">
-        <nav class="main-header__nav site-nav site-nav--closed site-nav--nojs">
+        <nav class="main-header__nav site-nav site-nav--closed">
           <button class="site-nav__toggle">
             <span class="visually-hidden">открыть меню</span>
           </button>
@@ -124,7 +152,7 @@
                 required
               />
               <svg class="contact__icon contact__icon--phone">
-                <use xlink:href="/img/svg/sprite.svg#phone-icon"></use>
+                <use xlink:href="/img/sprite.svg#phone"></use>
               </svg>
 
               <label class="contact__label" for="input-email"
@@ -138,7 +166,7 @@
                 required
               />
               <svg class="contact__icon contact__icon--email">
-                <use xlink:href="/img/svg/sprite.svg#email-icon"></use>
+                <use xlink:href="/img/sprite.svg#mail"></use>
               </svg>
             </div>
           </fieldset>
@@ -272,7 +300,7 @@
           <li class="socials__item">
             <a href="#" class="socials__link">
               <svg class="socials__icon button" width="24" height="24">
-                <use xlink:href="/img/svg/sprite.svg#vk-icon"></use>
+                <use xlink:href="/img/sprite.svg#vk"></use>
               </svg>
             </a>
           </li>
@@ -280,7 +308,7 @@
           <li class="socials__item">
             <a href="#" class="socials__link">
               <svg class="socials__icon button" width="24" height="24">
-                <use xlink:href="/img/svg/sprite.svg#telegram-icon"></use>
+                <use xlink:href="/img/sprite.svg#telegram"></use>
               </svg>
             </a>
           </li>
@@ -288,22 +316,29 @@
           <li class="socials__item">
             <a href="#" class="socials__link">
               <svg class="socials__icon button" width="24" height="24">
-                <use xlink:href="/img/svg/sprite.svg#youtube-icon"></use>
+                <use xlink:href="/img/sprite.svg#youtube"></use>
               </svg>
             </a>
           </li>
         </ul>
 
         <div class="footer__dev developer">
-          <svg class="developer__icon">
-            <use xlink:href="/img/svg/sprite.svg#dev-icon"></use>
-          </svg>
+          <a
+            href="https://htmlacademy.ru/intensive/adaptive"
+            class="developer__link"
+          >
+            <svg class="developer__icon">
+              <use xlink:href="/img/sprite.svg#dev"></use>
+            </svg>
+          </a>
         </div>
       </div>
     </footer>
     <script src="script.js"></script>
 
     <!--modal-->
+
+    <!--
 
     <div class="modal modal__container">
       <section class="modal__error">
@@ -320,8 +355,8 @@
         </div>
       </section>
     </div>
+  -->
 
-    <!--
     <div class="modal modal__container">
       <section class="modal__sent">
         <h1 class="visually-hidden">ваш отзыв отправлен!</h1>
@@ -339,5 +374,5 @@
         </div>
       </section>
     </div>
-  --></body>
+  </body>
 </html>

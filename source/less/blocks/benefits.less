@@ -49,22 +49,46 @@
 
 @media (min-width: @tablet-width) {
   .benefits__list {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .benefits__item {
-    padding: 52px 70px;
+    padding: 52px 33px;
+
+    &:nth-child(2) {
+      padding: 41px 39px;
+    }
+
+    &:nth-child(3) {
+      padding: 0 50px;
+      padding-top: 54px;
+    }
   }
 
   .benefits__title {
-    margin: 0 auto;
     padding-bottom: 15px;
-    max-width: 157px;
     font-size: 21px;
     line-height: 26px;
   }
 
   .benefits__counter {
     padding-bottom: 23px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .benefits__item {
+    padding-top: 54px;
+
+    &:nth-child(2) {
+      padding: 54px 62px;
+    }
+  }
+
+  .benefits__title {
+    margin: 0 auto;
+    padding-bottom: 12px;
+    width: 153px;
   }
 }

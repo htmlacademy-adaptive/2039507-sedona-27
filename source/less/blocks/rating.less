@@ -36,13 +36,18 @@
   border-radius: 50%;
   background-color: @white-grey;
 
-  &:hover,
+  &:hover {
+    background-color: @grey-hover;
+  }
+
   &:focus {
     background-color: @grey-hover;
+    outline: 1px solid @black;
   }
 
   &:active {
     background-color: @grey-active;
+    opacity: 0.3;
   }
 }
 
@@ -96,12 +101,15 @@
   .rating__list {
     padding: 17px 0;
     padding-left: 53px;
-    justify-content: space-between;
   }
 
   .rating__item {
     padding: 0;
     width: 280px;
+
+    &:not(:last-child) {
+      margin-right: 28px;
+    }
   }
 
   .rating__label {

@@ -4,6 +4,8 @@
 }
 
 .advantage__item {
+  padding-top: 10px;
+  padding-left: 47px;
   position: relative;
 
   @media (max-width: 767px) {
@@ -11,11 +13,6 @@
       margin-bottom: 23px;
     }
   }
-}
-
-.advantage__content {
-  padding-left: 47px;
-  padding-top: 10px;
 }
 
 .advantage__icon {
@@ -52,16 +49,14 @@
 @media (min-width: @tablet-width) {
   .advantage {
     padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .advantage__item {
     padding: 60px 40px;
-    padding-top: 156px;
+    padding-top: 158px;
     text-align: center;
-  }
-
-  .advantage__content {
-    padding: 0;
   }
 
   .advantage__icon {
@@ -75,12 +70,12 @@
 
     &--burger {
       top: 54px;
-      left: 83px;
+      left: 87px;
     }
 
     &--gift {
-      top: 62px;
-      left: 76px;
+      top: 59px;
+      left: 91px;
     }
   }
 
@@ -98,7 +93,7 @@
 @media (min-width: @desktop-width) {
   .advantage__item {
     padding: 69px 57px;
-    padding-top: 170px;
+    padding-top: 169px;
   }
 
   .advantage__icon {
@@ -109,12 +104,12 @@
 
     &--burger {
       top: 65px;
-      left: 155px;
+      left: 160px;
     }
 
     &--gift {
-      top: 67px;
-      left: 135px;
+      top: 64px;
+      left: 158px;
     }
   }
 }

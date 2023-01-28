@@ -19,14 +19,21 @@
   position: relative;
   display: block;
   padding-left: 62px;
+}
 
-  &:hover .attraction__mark,
-  &:focus .attraction__mark {
+.attraction__mark {
+  &:hover {
     background-color: @grey-hover;
   }
 
-  &:active .attraction__mark {
+  &:focus {
+    background-color: @grey-hover;
+    outline: 1px solid @black;
+  }
+
+  &:active {
     background-color: @grey-active;
+    opacity: 0.3;
   }
 }
 
@@ -79,8 +86,14 @@
   }
 
   .attraction__list {
-    padding: 0 45px;
     display: flex;
-    justify-content: space-between;
+    padding: 0;
+    padding-left: 45px;
+  }
+
+  .attraction__item {
+    &:not(:last-child) {
+      margin-right: 32px;
+    }
   }
 }

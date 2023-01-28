@@ -1,14 +1,14 @@
 .map__wrapper {
   width: 320px;
   margin: 0 auto;
-  padding-bottom: 8px;
+  padding-bottom: 15px;
   position: relative;
 
   &::before {
     display: none;
     position: absolute;
     content: "";
-    background-image: url("/img/index-image/map-marker.svg");
+    background-image: url("/img/map-marker.svg");
     width: 27px;
     height: 27px;
     top: 45%;
@@ -18,18 +18,31 @@
 
 .map__image {
   display: block;
+  background-color: @grey;
+  background-image: url("/img/map-mobile.png");
 }
 
 @media (min-width: @tablet-width) {
-  .map__wrapper,
+  .map__wrapper {
+    padding: 0;
+    width: 768px;
+  }
+
   .map__image {
     width: 768px;
+    background-color: @grey;
+    background-image: url("/img/map-tablet.png");
   }
 }
 
 @media (min-width: @desktop-width) {
-  .map__wrapper,
+  .map__wrapper {
+    width: 1200px;
+  }
+
   .map__image {
     width: 1200px;
+    background-color: @grey;
+    background-image: url("/img/map-desktop.png");
   }
 }

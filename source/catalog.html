@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -8,18 +8,44 @@
     <link rel="icon" href="favicon.ico" />
     <link rel="icon" href="/img/favicons/icon.svg" type="image/svg+xml" />
     <link rel="icon" href="/img/favicons/favicon.png" />
-    <title>Седона: Каталог</title>
+    <link
+      rel="preload"
+      href="/fonts/ptsansbold.woff"
+      type="font/woff"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/fonts/ptsansbold.woff2"
+      type="font/woff2"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="fonts/ptsans.woff"
+      type="font/woff"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="fonts/ptsans.woff2"
+      type="font/woff2"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <title>Седона: Фото и Видео</title>
   </head>
 
   <body class="page__body">
     <header class="main-header">
-      <a href="index.html">
-        <svg class="main-header__logo">
-          <use xlink:href="/img/svg/sprite.svg#logo"></use>
-        </svg>
-      </a>
       <div class="main-header__wrapper">
-        <nav class="main-header__nav site-nav site-nav--closed site-nav--nojs">
+        <nav class="main-header__nav site-nav site-nav--opened">
+          <!--
+            <nav class="site-nav--nojs">
+            -->
           <button class="site-nav__toggle">
             <span class="visually-hidden">открыть меню</span>
           </button>
@@ -49,6 +75,15 @@
               </li>
             </ul>
           </div>
+          <a
+            class="site-nav__logo"
+            href="index.html"
+            aria-label="логотип Седона"
+          >
+            <svg width="185" height="96">
+              <use xlink:href="/img/icons/sprite.svg#logo"></use>
+            </svg>
+          </a>
         </nav>
       </div>
     </header>
@@ -59,7 +94,7 @@
         <div class="intro__image"></div>
       </div>
       <div class="intro__inner intro__inner--catalog">
-        <h2 class="intro__title">фото и видео</h2>
+        <h2 class="intro__title intro__title--catalog">фото и видео</h2>
         <p class="intro__paragraph">
           Не можете решиться на путешествие из-за курса? фотографии помогут вам
           забыть о политике и экономике.
@@ -72,185 +107,222 @@
       <div class="photo__wrapper">
         <ul class="photo__list">
           <li class="photo__item">
-            <div class="photo__content photo__content--fullscreen">
-              <picture>
-                <source
-                  media="(min-width: 1280px)"
-                  srcset="/img/catalog-image/photo-1-desktop.jpg"
-                />
+            <a
+              class="photo__fullscreen"
+              href="#"
+              aria-label="открыть полное изображение"
+            >
+              <div class="photo__content photo__content--fullscreen">
+                <picture>
+                  <source
+                    media="(min-width: 1280px)"
+                    srcset="/img/photo-1-desktop.jpg"
+                  />
 
-                <source
-                  media="(min-width: 768px)"
-                  srcset="
-                    /img/catalog-image/photo-1-tablet.jpg,
-                    /img/catalog-image/photo-1-tablet@2x.jpg
-                  "
-                />
+                  <source
+                    media="(min-width: 768px)"
+                    srcset="
+                      /img/photo-1-tablet.jpg    1x,
+                      /img/photo-1-tablet@2x.jpg 2x
+                    "
+                  />
 
-                <img
-                  class="photo__image photo__image--fullscreen"
-                  srcset="/img/catalog-image/photo-1-mobile@2x.jpg"
-                  alt="фото дороги уходящей в закат"
-                  src="/img/catalog-image/photo-1-mobile.jpg"
-                />
-              </picture>
-              <div class="photo__inner">
-                <div class="photo__title">
-                  <span class="photo__name">неродные просторы</span>
-                  <span class="photo__author">Aвтор фото: Борис</span>
-                </div>
-                <div class="photo__likes-counter likes-counter">
-                  <button class="likes-counter__button" type="button">
-                    <svg class="likes-counter__icon">
-                      <use xlink:href="/img/svg/sprite.svg#like-icon"></use>
-                    </svg>
-                  </button>
-                  <div class="likes-counter__quantity">1350</div>
+                  <img
+                    class="photo__image photo__image--fullscreen"
+                    srcset="/img/photo-1-mobile@2x.jpg"
+                    alt="вид дороги уходящей в закат"
+                    src="/img/photo-1-mobile.jpg"
+                    width="280"
+                    height="280"
+                  />
+                </picture>
+                <div class="photo__inner">
+                  <div class="photo__title">
+                    <span class="photo__name">неродные просторы</span>
+                    <span class="photo__author">Aвтор фото: Борис</span>
+                  </div>
+                  <div class="photo__likes-counter likes-counter">
+                    <span
+                      class="likes-counter__button"
+                      aria-label="кнопка лайк"
+                    >
+                      <svg class="likes-counter__icon" width="22" height="20">
+                        <use xlink:href="/img/icons/sprite.svg#like"></use>
+                      </svg>
+                    </span>
+                    <div class="likes-counter__quantity">1350</div>
+                  </div>
                 </div>
               </div>
-            </div>
+            </a>
           </li>
 
           <li class="photo__item">
-            <div class="photo__content">
-              <picture>
-                <source
-                  media="(min-width: 1280px)"
-                  srcset="/img/catalog-image/photo-2-desktop.jpg"
-                  width="400"
-                  height="267"
-                />
+            <a
+              class="photo__fullscreen"
+              href="#"
+              aria-label="открыть полное изображение"
+            >
+              <div class="photo__content">
+                <picture>
+                  <source
+                    media="(min-width: 1280px)"
+                    srcset="/img/photo-2-desktop.jpg"
+                    width="400"
+                    height="267"
+                  />
 
-                <source
-                  media="(min-width: 768px)"
-                  srcset="
-                    /img/catalog-image/photo-2-tablet.jpg,
-                    /img/catalog-image/photo-2-tablet@2x.jpg
-                  "
-                  width="324"
-                  height="267"
-                />
+                  <source
+                    media="(min-width: 768px)"
+                    srcset="
+                      /img/photo-2-tablet.jpg    1x,
+                      /img/photo-2-tablet@2x.jpg 2x
+                    "
+                    width="324"
+                    height="267"
+                  />
 
-                <img
-                  class="photo__image"
-                  srcset="/img/catalog-image/photo-2-mobile@2x.jpg"
-                  src="/img/catalog-image/photo-2-mobile.jpg"
-                  width="280"
-                  height="280"
-                  alt="растительность на фоне холмов"
-                />
-              </picture>
+                  <img
+                    class="photo__image"
+                    srcset="/img/photo-2-mobile@2x.jpg"
+                    src="/img/photo-2-mobile.jpg"
+                    width="280"
+                    height="280"
+                    alt="растительность на фоне холмов"
+                  />
+                </picture>
 
-              <div class="photo__inner">
-                <div class="photo__title">
-                  <span class="photo__name">местная растительность</span>
-                  <span class="photo__author">Автор фото: Сергей</span>
-                </div>
-                <div class="photo__likes-counter likes-counter">
-                  <button class="likes-counter__button" type="button">
-                    <svg class="likes-counter__icon">
-                      <use xlink:href="/img/svg/sprite.svg#like-icon"></use>
-                    </svg>
-                  </button>
-                  <div class="likes-counter__quantity">143</div>
+                <div class="photo__inner">
+                  <div class="photo__title">
+                    <span class="photo__name">местная растительность</span>
+                    <span class="photo__author">Автор фото: Сергей</span>
+                  </div>
+                  <div class="photo__likes-counter likes-counter">
+                    <span
+                      class="likes-counter__button"
+                      aria-label="кнопка лайк"
+                    >
+                      <svg class="likes-counter__icon" width="22" height="20">
+                        <use xlink:href="/img/icons/sprite.svg#like"></use>
+                      </svg>
+                    </span>
+                    <div class="likes-counter__quantity">143</div>
+                  </div>
                 </div>
               </div>
-            </div>
+            </a>
           </li>
 
           <li class="photo__item">
-            <div class="photo__content">
-              <picture>
-                <source
-                  media="(min-width: 1280px)"
-                  type="image/webp"
-                  srcset="/img/catalog-image/photo-3-desktop.webp"
-                  width="400"
-                  height="267"
-                />
+            <a
+              class="photo__fullscreen"
+              href="#"
+              aria-label="открыть полное изображение"
+            >
+              <div class="photo__content">
+                <picture>
+                  <source
+                    media="(min-width: 1280px)"
+                    srcset="/img/photo-3-desktop.jpg"
+                    width="400"
+                    height="267"
+                  />
 
-                <source
-                  media="(min-width: 768px)"
-                  srcset="
-                    /img/catalog-image/photo-3-tablet.jpg,
-                    /img/catalog-image/photo-3-tablet@2x.jpg
-                  "
-                  width="324"
-                  height="267"
-                />
+                  <source
+                    media="(min-width: 768px)"
+                    srcset="
+                      /img/photo-3-tablet.jpg    1x,
+                      /img/photo-3-tablet@2x.jpg 2x
+                    "
+                    width="324"
+                    height="267"
+                  />
 
-                <img
-                  class="photo__image"
-                  srcset="/img/catalog-image/photo-3-mobile@2x.jpg"
-                  src="/img/catalog-image/photo-3-mobile.jpg"
-                  alt="извилистая дорога на склоне холма"
-                  width="280"
-                  height="280"
-                />
-              </picture>
+                  <img
+                    class="photo__image"
+                    srcset="/img/photo-3-mobile@2x.jpg"
+                    src="/img/photo-3-mobile.jpg"
+                    alt="извилистая дорога на склоне холма"
+                    width="280"
+                    height="280"
+                  />
+                </picture>
 
-              <div class="photo__inner">
-                <div class="photo__title">
-                  <span class="photo__name">дорога на север</span>
-                  <span class="photo__author">Автор фото: Петр</span>
-                </div>
-                <div class="photo__likes-counter likes-counter">
-                  <button class="likes-counter__button" type="button">
-                    <svg class="likes-counter__icon">
-                      <use xlink:href="/img/svg/sprite.svg#like-icon"></use>
-                    </svg>
-                  </button>
-                  <div class="likes-counter__quantity">96</div>
+                <div class="photo__inner">
+                  <div class="photo__title">
+                    <span class="photo__name">дорога на север</span>
+                    <span class="photo__author">Автор фото: Петр</span>
+                  </div>
+                  <div class="photo__likes-counter likes-counter">
+                    <span
+                      class="likes-counter__button"
+                      aria-label="кнопка лайк"
+                    >
+                      <svg class="likes-counter__icon" width="22" height="20">
+                        <use xlink:href="/img/icons/sprite.svg#like"></use>
+                      </svg>
+                    </span>
+                    <div class="likes-counter__quantity">96</div>
+                  </div>
                 </div>
               </div>
-            </div>
+            </a>
           </li>
 
           <li class="photo__item">
-            <div class="photo__content">
-              <picture>
-                <source
-                  media="(min-width: 1280px)"
-                  srcset="/img/catalog-image/photo-4-desktop.jpg"
-                  width="400"
-                  height="267"
-                />
+            <a
+              class="photo__fullscreen"
+              href="#"
+              aria-label="открыть полное изображение"
+            >
+              <div class="photo__content">
+                <picture>
+                  <source
+                    media="(min-width: 1280px)"
+                    srcset="/img/photo-4-desktop.jpg"
+                    width="400"
+                    height="267"
+                  />
 
-                <source
-                  media="(min-width: 768px)"
-                  srcset="
-                    /img/catalog-image/photo-4-tablet.jpg,
-                    /img/catalog-image/photo-4-tablet@2x.jpg
-                  "
-                  width="324"
-                  height="267"
-                />
+                  <source
+                    media="(min-width: 768px)"
+                    srcset="
+                      /img/photo-4-tablet.jpg    1x,
+                      /img/photo-4-tablet@2x.jpg 2x
+                    "
+                    width="324"
+                    height="267"
+                  />
 
-                <img
-                  class="photo__image"
-                  srcset="/img/catalog-image/photo-4-mobile@2x.jpg"
-                  src="/img/catalog-image/photo-4-mobile.jpg"
-                  alt="долина с холмами на ближнем фоне"
-                  width="280"
-                  height="280"
-                />
-              </picture>
+                  <img
+                    class="photo__image"
+                    srcset="/img/photo-4-mobile@2x.jpg"
+                    src="/img/photo-4-mobile.jpg"
+                    alt="долина с холмами на ближнем фоне"
+                    width="280"
+                    height="280"
+                  />
+                </picture>
 
-              <div class="photo__inner">
-                <div class="photo__title">
-                  <span class="photo__name">мост дьявола</span>
-                  <span class="photo__author">Автор фото: Антон</span>
-                </div>
-                <div class="photo__likes-counter likes-counter">
-                  <button class="likes-counter__button" type="button">
-                    <svg class="likes-counter__icon">
-                      <use xlink:href="/img/svg/sprite.svg#like-icon"></use>
-                    </svg>
-                  </button>
-                  <div class="likes-counter__quantity">254</div>
+                <div class="photo__inner">
+                  <div class="photo__title">
+                    <span class="photo__name">мост дьявола</span>
+                    <span class="photo__author">Автор фото: Антон</span>
+                  </div>
+                  <div class="photo__likes-counter likes-counter">
+                    <span
+                      class="likes-counter__button"
+                      aria-label="кнопка лайк"
+                    >
+                      <svg class="likes-counter__icon" width="22" height="20">
+                        <use xlink:href="/img/icons/sprite.svg#like"></use>
+                      </svg>
+                    </span>
+                    <div class="likes-counter__quantity">254</div>
+                  </div>
                 </div>
               </div>
-            </div>
+            </a>
           </li>
         </ul>
       </div>
@@ -266,26 +338,25 @@
           >
         </div>
         <div class="video__player">
-          <div class="video__image">
-            <picture>
-              <source
-                media="(min-width: 1280px)"
-                srcset="/img/catalog-image/video-desktop.jpg"
-              />
-              <source
-                media="(min-widht: 768px)"
-                srcset="
-                  /img/catalog-image/video-tablet.jpg,
-                  /img/catalog-image/video-tablet@2x.jpg
-                "
-              />
-              <img
-                src="/img/catalog-image/video-mobile.jpg"
-                alt="#"
-                srcset="/img/catalog-image/video-mobile@2x.jpg"
-              />
-            </picture>
-          </div>
+          <picture>
+            <source
+              media="(min-width: 1280px)"
+              srcset="/img/video-desktop.jpg"
+            />
+
+            <source
+              media="(min-widht: 768px)"
+              srcset="/img/video-tablet.jpg 1x, /img/video-tablet@2x.jpg 2x"
+            />
+            <img
+              class="video__image"
+              src="/img/video-mobile.jpg"
+              width="280"
+              height="177"
+              alt="автодорога между холмами"
+              srcset="/img/video-mobile@2x.jpg"
+            />
+          </picture>
         </div>
       </div>
     </section>
@@ -296,37 +367,43 @@
 
         <ul class="footer__socials socials">
           <li class="socials__item">
-            <a href="#" class="socials__link">
+            <a class="socials__link" href="#" aria-label="ссылка на вк">
               <svg class="socials__icon button" width="24" height="24">
-                <use xlink:href="/img/svg/sprite.svg#vk-icon"></use>
+                <use xlink:href="/img/icons/sprite.svg#vk"></use>
               </svg>
             </a>
           </li>
 
           <li class="socials__item">
-            <a href="#" class="socials__link">
+            <a class="socials__link" href="#" aria-label="ссылка на телеграм">
               <svg class="socials__icon button" width="24" height="24">
-                <use xlink:href="/img/svg/sprite.svg#telegram-icon"></use>
+                <use xlink:href="/img/icons/sprite.svg#telegram"></use>
               </svg>
             </a>
           </li>
 
           <li class="socials__item">
-            <a href="#" class="socials__link">
+            <a class="socials__link" href="#" aria-label="ссылка на ютуб">
               <svg class="socials__icon button" width="24" height="24">
-                <use xlink:href="/img/svg/sprite.svg#youtube-icon"></use>
+                <use xlink:href="/img/icons/sprite.svg#youtube"></use>
               </svg>
             </a>
           </li>
         </ul>
 
         <div class="footer__dev developer">
-          <svg class="developer__icon">
-            <use xlink:href="/img/svg/sprite.svg#dev-icon"></use>
-          </svg>
+          <a
+            href="https://htmlacademy.ru/intensive/adaptive"
+            class="developer__link"
+            aria-label="ссылка на академию"
+          >
+            <svg class="developer__icon" width="130" height="34">
+              <use xlink:href="/img/icons/sprite.svg#dev"></use>
+            </svg>
+          </a>
         </div>
       </div>
     </footer>
-    <script src="script.js"></script>
+    <script src="/js/script.js"></script>
   </body>
 </html>

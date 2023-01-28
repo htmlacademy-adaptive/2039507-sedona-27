@@ -1,7 +1,7 @@
 .photo__wrapper {
   width: 280px;
   margin: 0 auto;
-  padding-top: 35px;
+  padding-top: 10px;
 }
 
 .photo__list {
@@ -41,6 +41,10 @@
   }
 }
 
+.photo__fullscreen {
+  text-decoration: none;
+}
+
 .photo__content {
   width: 280px;
   margin: 0 auto;
@@ -70,9 +74,11 @@
   font-size: 14px;
   line-height: 21px;
   font-weight: @bold;
+  color: @black;
 }
 
 .photo__author {
+  text-decoration: none;
   color: @dark-grey;
 }
 
@@ -90,6 +96,11 @@
   .photo__item {
     padding: 0;
     border: none;
+    background-color: @white-grey;
+
+    &:nth-of-type(3) {
+      background-color: #eaeaea;
+    }
   }
 
   .photo__content {
@@ -102,12 +113,15 @@
 
   .photo__image {
     width: 100%;
+
+    &--fullscreen {
+      height: 400px;
+    }
   }
 
   .photo__inner {
     padding: 22px 20px;
     padding-bottom: 14px;
-    background-color: @grey;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -122,6 +136,7 @@
 @media (min-width: @desktop-width) {
   .photo__wrapper {
     width: 1200px;
+    padding-top: 43px;
   }
 
   .photo__content {
@@ -136,6 +151,8 @@
   .photo__inner {
     position: absolute;
     bottom: 0;
+    padding: 15px 25px;
+    padding-top: 20px;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.3);
     box-sizing: border-box;

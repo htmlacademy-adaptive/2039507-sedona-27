@@ -36,13 +36,18 @@
   border-radius: 50%;
   background-color: @white-grey;
 
-  &:hover,
+  &:hover {
+    background-color: @grey-hover;
+  }
+
   &:focus {
     background-color: @grey-hover;
+    outline: 1px solid @black;
   }
 
   &:active {
     background-color: @grey-active;
+    opacity: 0.3;
   }
 }
 
@@ -72,11 +77,19 @@
     padding-left: 35px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
   }
 
   .rating__item {
     padding-right: 51px;
+  }
+
+  .rating__label {
+    padding: 18px 0;
+    padding-left: 62px;
+  }
+
+  .rating__mark {
+    top: 6px;
   }
 }
 
@@ -86,6 +99,20 @@
   }
 
   .rating__list {
+    padding: 17px 0;
     padding-left: 53px;
+  }
+
+  .rating__item {
+    padding: 0;
+    width: 280px;
+
+    &:not(:last-child) {
+      margin-right: 28px;
+    }
+  }
+
+  .rating__label {
+    padding-left: 62px;
   }
 }

@@ -19,25 +19,6 @@
   position: relative;
   display: block;
   padding-left: 62px;
-
-  &:hover .attraction__mark,
-  &:focus .attraction__mark {
-    background-color: @grey-hover;
-  }
-
-  &:active .attraction__mark {
-    background-color: @grey-active;
-  }
-}
-
-.attraction__checkbox:checked + .attraction__mark::before {
-  position: absolute;
-  content: "";
-  background-image: url("../img/form-image/check-icon.svg");
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  width: 46px;
-  height: 46px;
 }
 
 .attraction__mark {
@@ -47,6 +28,30 @@
   width: 45px;
   height: 45px;
   background-color: @white-grey;
+
+  &:hover {
+    background-color: @grey-hover;
+  }
+
+  &:focus {
+    background-color: @grey-hover;
+    outline: 1px solid @black;
+  }
+
+  &:active {
+    background-color: @grey-active;
+    opacity: 0.3;
+  }
+}
+
+.attraction__checkbox:checked + .attraction__mark::before {
+  position: absolute;
+  content: "";
+  background-image: url("../img/check.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  width: 46px;
+  height: 46px;
 }
 
 .attraction__label {
@@ -69,6 +74,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 32px;
+    row-gap: 14px;
   }
 }
 
@@ -78,8 +84,14 @@
   }
 
   .attraction__list {
-    padding: 0 45px;
     display: flex;
-    justify-content: space-between;
+    padding: 0;
+    padding-left: 45px;
+  }
+
+  .attraction__item {
+    &:not(:last-child) {
+      margin-right: 32px;
+    }
   }
 }

@@ -1,9 +1,10 @@
 .button {
+  margin: 0;
   text-decoration: none;
   text-transform: uppercase;
   background-color: @blue;
   color: @white;
-  font-size: 21px;
+  font-size: 18px;
   font-weight: @bold;
   line-height: 26px;
   border: none;
@@ -15,10 +16,11 @@
 
   &:focus {
     background-color: @blue-hover;
+    outline: 1px solid @brown-grey;
   }
 
   &:active {
     background-color: @blue-active;
-    fill: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.3);
   }
 }

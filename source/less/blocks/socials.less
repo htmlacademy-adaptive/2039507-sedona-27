@@ -13,4 +13,18 @@
   height: 24px;
   background-color: @blue;
   fill: @white;
+
+  &:hover {
+    background-color: @blue-hover;
+  }
+
+  &:focus {
+    background-color: @blue-hover;
+    outline: 1px solid @brown-grey;
+  }
+
+  &:active {
+    background-color: @blue-active;
+    color: rgba(0, 0, 0, 0.25);
+  }
 }

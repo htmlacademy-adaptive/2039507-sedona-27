@@ -8,13 +8,14 @@
   position: relative;
   width: 320px;
   height: 158px;
-  background-image: url("../img/index-image/bg-intro-mobile.jpg");
+  background-image: url("../img/bg-intro-mobile.jpg");
+  background-color: @blue;
   background-repeat: no-repeat;
   background-position: 50% 100%;
   z-index: -1;
 
   @media (min-resolution: 2dppx) {
-    background-image: url("../img/index-image/bg-intro-mobile@2x.jpg");
+    background-image: url("../img/bg-intro-mobile@2x.jpg");
     background-repeat: no-repeat;
     background-position: 50% 100%;
     background-size: 320px auto;
@@ -79,7 +80,7 @@
       &::before {
         position: absolute;
         content: "";
-        background: url("/img/index-image/intro-bottom.svg") no-repeat;
+        background: url("/img/intro-bottom.svg") no-repeat;
         width: 320px;
         height: 37px;
         bottom: -55px;
@@ -130,10 +131,10 @@
   .intro__image {
     width: 768px;
     height: 290px;
-    background: url("../img/index-image/bg-intro-tablet.jpg") no-repeat 50% 100%;
+    background: url("../img/bg-intro-tablet.jpg") no-repeat 50% 100%;
 
     @media (min-resolution: 2dppx) {
-      background-image: url("../img/index-image/bg-intro-tablet@2x.jpg");
+      background-image: url("../img/bg-intro-tablet@2x.jpg");
     }
 
     &::before {
@@ -167,9 +168,8 @@
   }
 
   .intro__inner {
-    margin: 0 auto;
     padding-top: 64px;
-    width: 530px;
+    width: 475px;
     border: none;
 
     &--index {
@@ -215,7 +215,7 @@
 
   .intro__inner {
     padding-top: 115px;
-    padding-bottom: 40px;
+    padding-bottom: 44px;
 
     &--index {
       width: 530px;
@@ -224,17 +224,18 @@
 
     &--catalog {
       padding-top: 105px;
+      padding-bottom: 41px;
     }
   }
 
   .intro__title {
-    padding-bottom: 31px;
+    padding-bottom: 30px;
   }
 
   .intro__image {
     width: 1200px;
     height: 301px;
-    background-image: url("../img/index-image/bg-intro-desktop.jpg");
+    background-image: url("../img/bg-intro-desktop.jpg");
     background-repeat: no-repeat;
     background-position: 50% 100%;
 

@@ -19,14 +19,28 @@
   position: relative;
   display: block;
   padding-left: 62px;
+}
 
-  &:hover .attraction__mark,
-  &:focus .attraction__mark {
+.attraction__mark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45px;
+  height: 45px;
+  background-color: @white-grey;
+
+  &:hover {
     background-color: @grey-hover;
   }
 
-  &:active .attraction__mark {
+  &:focus {
+    background-color: @grey-hover;
+    outline: 1px solid @black;
+  }
+
+  &:active {
     background-color: @grey-active;
+    opacity: 0.3;
   }
 }
 
@@ -38,15 +52,6 @@
   background-position: 50% 50%;
   width: 46px;
   height: 46px;
-}
-
-.attraction__mark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 45px;
-  height: 45px;
-  background-color: @white-grey;
 }
 
 .attraction__label {
@@ -79,8 +84,14 @@
   }
 
   .attraction__list {
-    padding: 0 45px;
     display: flex;
-    justify-content: space-between;
+    padding: 0;
+    padding-left: 45px;
+  }
+
+  .attraction__item {
+    &:not(:last-child) {
+      margin-right: 32px;
+    }
   }
 }

@@ -42,7 +42,6 @@
 
   &:focus {
     background-color: @grey-hover;
-    outline: 1px solid @black;
   }
 
   &:active {
@@ -81,34 +80,29 @@
 
   .rating__item {
     padding-right: 51px;
-  }
 
-  .rating__label {
-    padding: 18px 0;
-    padding-left: 62px;
+    &:not(:last-child) {
+      margin-bottom: 7px;
+    }
   }
 
   .rating__mark {
-    top: 6px;
+    top: 3px;
   }
 }
 
 @media (min-width: @desktop-width) {
   .rating {
-    width: 960px;
-  }
-
-  .rating__list {
     padding: 17px 0;
-    padding-left: 53px;
+    padding-left: 18px;
+    width: 960px;
   }
 
   .rating__item {
     padding: 0;
-    width: 280px;
 
     &:not(:last-child) {
-      margin-right: 28px;
+      margin-right: 62px;
     }
   }
 
